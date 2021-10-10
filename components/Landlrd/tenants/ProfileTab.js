@@ -1,23 +1,16 @@
+import CheckIcon from "@material-ui/icons/CheckCircleOutline";
+import DotIcon from "@material-ui/icons/FiberManualRecord";
+import ViewIcon from "@material-ui/icons/Style";
 import React from "react";
 import styled from "styled-components";
 import {
+  CaptionText,
   Container,
+  NormalText,
   SubHeader,
   SubText,
-  Text,
-  NormalText,
-  CaptionText,
+  Text
 } from "../../styledComponents";
-import { Avatar, Divider } from "@material-ui/core";
-import MailIcon from "@material-ui/icons/Mail";
-import BathroomIcon from "@material-ui/icons/BathTub";
-import BedIcon from "@material-ui/icons/KingBed";
-import GardenIcon from "@material-ui/icons/AmpStories";
-import CarIcon from "@material-ui/icons/DirectionsCar";
-import GraphIcon from "@material-ui/icons/ShowChart";
-import ViewIcon from "@material-ui/icons/Style";
-import CheckIcon from "@material-ui/icons/CheckCircleOutline";
-import DotIcon from "@material-ui/icons/FiberManualRecord";
 const Tag = styled.div`
   display: flex;
   flex-direction: row;

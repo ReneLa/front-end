@@ -1,23 +1,17 @@
-import React from "react";
-import styled from "styled-components";
-import { Query } from "react-apollo";
-import {
-  Container,
-  SubHeader,
-  SubText,
-  Text,
-  IconButton,
-  CaptionText,
-} from "../../styledComponents";
 import BackIcon from "@material-ui/icons/KeyboardArrowLeft";
 import NextIcon from "@material-ui/icons/KeyboardArrowRight";
-import { Avatar, Divider } from "@material-ui/core";
 import ContactIcon from "@material-ui/icons/PersonPin";
 import gql from "graphql-tag";
-import SingleTicket from "../tickets/SingleTicket";
-import CreateTicket from "./create/CreateTicket";
+import React from "react";
+import { Query } from "react-apollo";
+import styled from "styled-components";
 import { perPage } from "../../../config";
 import SearchTickets from "../../queryComponents/SearchTicket";
+import {
+  CaptionText, Container, IconButton, SubHeader, Text
+} from "../../styledComponents";
+import SingleTicket from "../tickets/SingleTicket";
+import CreateTicket from "./create/CreateTicket";
 
 const Tag = styled.div`
   display: flex;

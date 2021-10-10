@@ -1,19 +1,11 @@
-import React from "react";
+import { Avatar, IconButton, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { Avatar, Typography, IconButton } from "@material-ui/core";
-import {
-  Container,
-  FlatButton,
-  CommandButton,
-  PrimaryButton,
-  OutlineButton,
-  ActionButton,
-  Text,
-  SubText,
-  NormalText,
-  CaptionText
-} from "../../../styledComponents";
 import MoreIcon from "@material-ui/icons/MoreHoriz";
+import React from "react";
+import {
+  CaptionText, CommandButton, Container,
+  FlatButton, SubText, Text
+} from "../../../styledComponents";
 
 const useStyles = makeStyles(theme => ({
   root: {

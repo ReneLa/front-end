@@ -1,9 +1,7 @@
+import { Divider, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
-import { makeStyles, withStyles, fade } from "@material-ui/core/styles";
-import { Typography, Divider } from "@material-ui/core";
 import { Container } from "../../styledComponents";
-import ToggleOffIcon from "@material-ui/icons/ToggleOff";
-import ToggleOnIcon from "@material-ui/icons/ToggleOn";
 
 const ticket = {
   id: 1,

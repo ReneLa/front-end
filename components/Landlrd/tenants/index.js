@@ -1,26 +1,16 @@
-import React from "react";
-import gql from "graphql-tag";
-import { Query } from "react-apollo";
-import {
-  Container,
-  Text,
-  CommandButton,
-  SubText,
-  CaptionText,
-  Header,
-  SubHeader,
-  IconButton,
-  ActionButton,
-} from "../../styledComponents";
-import SearchTenants from "../../queryComponents/SearchTenants";
-import styled from "styled-components";
-import HouseItem from "../HouseItem";
-import TenantCard from "../TenantCard";
-import { perPage } from "../../../config";
-import ContactIcon from "@material-ui/icons/PersonPin";
-import loadingImg from "../../../public/static/126.gif";
 import BackIcon from "@material-ui/icons/KeyboardArrowLeft";
 import NextIcon from "@material-ui/icons/KeyboardArrowRight";
+import ContactIcon from "@material-ui/icons/PersonPin";
+import gql from "graphql-tag";
+import React from "react";
+import { Query } from "react-apollo";
+import styled from "styled-components";
+import { perPage } from "../../../config";
+import SearchTenants from "../../queryComponents/SearchTenants";
+import {
+  ActionButton, CaptionText, Container, Header, IconButton, SubHeader, SubText
+} from "../../styledComponents";
+import TenantCard from "../TenantCard";
 import CreateTenant from "./create/CreateTenant";
 
 const SearchWrapper = styled(Container)`

@@ -1,35 +1,25 @@
-import React from "react";
-import styled from "styled-components";
-import Link from "next/link";
-import { makeStyles } from "@material-ui/core/styles";
+import { useMutation } from "@apollo/react-hooks";
 import {
-  Container,
-  Text,
-  CommandButton,
-  IconButton,
-  SubHeader,
-  SubText,
-  PrimaryButton,
-  CaptionText,
-} from "../styledComponents";
-import userPhoto from "../../public/static/sandy.jpeg";
-import {
-  Avatar,
-  Popover,
-  Slide,
-  Dialog,
+  Avatar, Dialog,
   DialogActions,
   DialogContent,
-  DialogTitle,
-  DialogContentText,
+  DialogTitle, Popover,
+  Slide
 } from "@material-ui/core";
-import gql from "graphql-tag";
-import { useMutation } from "@apollo/react-hooks";
-import AddIcon from "@material-ui/icons/MoreHoriz";
+import { makeStyles } from "@material-ui/core/styles";
 import BathIcon from "@material-ui/icons/Bathtub";
-import BedIcon from "@material-ui/icons/SingleBed";
 import DeleteIcon from "@material-ui/icons/DeleteOutline";
+import AddIcon from "@material-ui/icons/MoreHoriz";
+import BedIcon from "@material-ui/icons/SingleBed";
+import gql from "graphql-tag";
+import Link from "next/link";
+import React from "react";
+import styled from "styled-components";
 import { GET_USER_HOUSES } from "../queryComponents/landlord/LandlordHouses";
+import {
+  CaptionText, CommandButton, Container, IconButton, PrimaryButton, SubHeader,
+  SubText
+} from "../styledComponents";
 import { PAGINATION_QUERY } from "./houses/index";
 
 const useStyles = makeStyles((theme) => ({

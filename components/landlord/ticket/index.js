@@ -1,18 +1,11 @@
-import React from "react";
-import { makeStyles, withStyles, fade } from "@material-ui/core/styles";
-import PropTypes from "prop-types";
 import {
-  Typography,
-  Paper,
-  InputBase,
-  Tab,
-  Tabs,
-  Divider,
-  Avatar,
-  IconButton,
-  Box
+  Avatar, Divider, IconButton, InputBase, Paper, Tab,
+  Tabs
 } from "@material-ui/core";
+import { fade, makeStyles, withStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
+import PropTypes from "prop-types";
+import React from "react";
 import { Container } from "../../styledComponents";
 import TicketDetails from "./TicketsDetails";
 

@@ -1,24 +1,13 @@
-import React from "react";
-import clsx from "clsx";
-import styled from "styled-components";
-import { makeStyles } from "@material-ui/core/styles";
-import Drawer from "@material-ui/core/Drawer";
-import List from "@material-ui/core/List";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import DashboardIcon from "@material-ui/icons/Dashboard";
-import TenantsIcon from "@material-ui/icons/People";
-import HouseIcon from "@material-ui/icons/Home";
-import TicketsIcon from "@material-ui/icons/Mail";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import { theme as customTheme } from "../Page";
-import CustomLink from "../CustomLink";
-import { Container, SubText, SubHeader, Text } from "../styledComponents";
-import hasLogo from "../../public/static/HAS.png";
 import { Avatar } from "@material-ui/core";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Drawer from "@material-ui/core/Drawer";
+import { makeStyles } from "@material-ui/core/styles";
+import clsx from "clsx";
+import React from "react";
+import hasLogo from "../../public/static/HAS.png";
 import ActiveLink from "../ActiveLink";
+import { theme as customTheme } from "../Page";
+import { Container } from "../styledComponents";
 
 const drawerWidth = 200;
 

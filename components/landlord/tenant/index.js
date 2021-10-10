@@ -1,40 +1,31 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Link from "next/link";
 import {
-  Typography,
-  Paper,
-  InputBase,
-  Divider,
-  IconButton,
-  GridList,
   Avatar,
-  Button,
-  GridListTile
+  Button, Divider, GridList, GridListTile, IconButton, InputBase, Paper, Typography
 } from "@material-ui/core";
-import { theme as customTheme } from "../../Page";
+import { makeStyles } from "@material-ui/core/styles";
 import CheckIcon from "@material-ui/icons/CheckCircleOutline";
-import BedIcon from "@material-ui/icons/SingleBed";
-import BathroomIcon from "@material-ui/icons/Bathtub";
+// import BathroomIcon from "@material-ui/icons/Bathtub";
 import SearchIcon from "@material-ui/icons/Search";
-import CustomDrawer from "../Drawer";
+import Link from "next/link";
+import React from "react";
+import loadingImg from "../../../public/static/126.gif";
 import Tenants from "../../queryComponents/Tenants";
 import { Container } from "../../styledComponents";
-import loadingImg from "../../../public/static/126.gif";
+import CustomDrawer from "../Drawer";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flex: 1,
     height: 500,
     flexDirection: "column",
-    padding: theme.spacing(1)
+    padding: theme.spacing(1),
   },
   toolbar: {
     display: "flex",
     alignItems: "center",
     flexDirection: "row",
-    marginBottom: theme.spacing(2)
+    marginBottom: theme.spacing(2),
     // padding: theme.spacing(0)
     // ...theme.mixins.toolbar
   },
@@ -42,21 +33,21 @@ const useStyles = makeStyles(theme => ({
     padding: "2px 4px",
     display: "flex",
     alignItems: "center",
-    width: 300
+    width: 300,
   },
   input: {
     marginLeft: 10,
-    flex: 1
+    flex: 1,
   },
   iconButton: {
-    padding: 10
+    padding: 10,
   },
   divider: {
     height: 28,
-    margin: 4
+    margin: 4,
   },
   dividerLine: {
-    width: "100%"
+    width: "100%",
     // marginTop: 3
   },
   gridList: {
@@ -65,10 +56,10 @@ const useStyles = makeStyles(theme => ({
     // backgroundColor: "blue",
     // width: "100%",
     height: "100%",
-    overflowY: "hidden"
+    overflowY: "hidden",
   },
   icon: {
-    color: "rgba(255, 255, 255, 0.54)"
+    color: "rgba(255, 255, 255, 0.54)",
   },
   tenantTileStyle: {
     // display: "flex",
@@ -81,12 +72,12 @@ const useStyles = makeStyles(theme => ({
     "&:hover": {
       // zIndex: 1,
       // backgroundColor: "#0B1B21",
-      transform: `scale(1.03) translate(0.2px, 0px)`
-    }
+      transform: `scale(1.03) translate(0.2px, 0px)`,
+    },
   },
   tileWrapper: {
     width: "100%",
-    height: "100%"
+    height: "100%",
     // backgroundColor: "pink"
   },
   imageWrapper: {
@@ -95,7 +86,7 @@ const useStyles = makeStyles(theme => ({
     // width: 150,
     padding: 2,
     borderRadius: 4,
-    transition: `transform 600ms`
+    transition: `transform 600ms`,
     // "&:hover": {
     //   border: "1px solid red"
     // }
@@ -103,11 +94,11 @@ const useStyles = makeStyles(theme => ({
   imageStyle: {
     width: "100%",
     height: 90,
-    objectFit: "fit"
-  }
+    objectFit: "fit",
+  },
 }));
 
-const Index = props => {
+const Index = (props) => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -118,11 +109,11 @@ const Index = props => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const onViewHouse = house => {
+  const onViewHouse = (house) => {
     setHouse(house);
   };
 
-  const _tileCard = tenant => {
+  const _tileCard = (tenant) => {
     const { userId, houseId } = tenant;
 
     return (
@@ -141,7 +132,7 @@ const Index = props => {
               customStyles={{
                 position: "absolute",
                 top: 3,
-                right: 3
+                right: 3,
               }}
             >
               {tenant.isActive && (
@@ -170,7 +161,7 @@ const Index = props => {
               customStyles={{ paddingLeft: 5, paddingRight: 5 }}
             >
               <Container row center middle flex={1} color="transparent">
-                <BathroomIcon style={{ fontSize: 15 }} />
+                {/* <BathroomIcon style={{ fontSize: 15 }} /> */}
               </Container>
               <Container row middle center flex={1} center color="transparent">
                 <Button color="primary">View Profile</Button>
@@ -188,7 +179,7 @@ const Index = props => {
       column
       customStyles={{
         paddingLeft: 20,
-        height: "100%"
+        height: "100%",
       }}
     >
       <Container
@@ -242,105 +233,105 @@ const Index = props => {
                         id: 1,
                         isActive: true,
                         firstName: "Rene",
-                        lastName: "La"
+                        lastName: "La",
                       },
                       {
                         id: 2,
                         isActive: false,
                         firstName: "Mehn",
-                        lastName: "Soft"
+                        lastName: "Soft",
                       },
                       {
                         id: 3,
                         isActive: true,
                         firstName: "Nein",
-                        lastName: "gehts"
+                        lastName: "gehts",
                       },
                       {
                         id: 4,
                         isActive: true,
                         firstName: "Rene",
-                        lastName: "La"
+                        lastName: "La",
                       },
                       {
                         id: 5,
                         isActive: false,
                         firstName: "Mehn",
-                        lastName: "Soft"
+                        lastName: "Soft",
                       },
                       {
                         id: 6,
                         isActive: true,
                         firstName: "Nein",
-                        lastName: "gehts"
+                        lastName: "gehts",
                       },
                       {
                         id: 7,
                         isActive: true,
                         firstName: "Rene",
-                        lastName: "La"
+                        lastName: "La",
                       },
                       {
                         id: 8,
                         isActive: true,
                         firstName: "Nein",
-                        lastName: "gehts"
+                        lastName: "gehts",
                       },
                       {
                         id: 9,
                         isActive: true,
                         firstName: "Rene",
-                        lastName: "La"
+                        lastName: "La",
                       },
                       {
                         id: 10,
                         isActive: false,
                         firstName: "Mehn",
-                        lastName: "Soft"
+                        lastName: "Soft",
                       },
                       {
                         id: 11,
                         isActive: true,
                         firstName: "Nein",
-                        lastName: "gehts"
+                        lastName: "gehts",
                       },
                       {
                         id: 12,
                         isActive: true,
                         firstName: "Rene",
-                        lastName: "La"
+                        lastName: "La",
                       },
                       {
                         id: 13,
                         isActive: true,
                         firstName: "Nein",
-                        lastName: "gehts"
+                        lastName: "gehts",
                       },
                       {
                         id: 14,
                         isActive: true,
                         firstName: "Rene",
-                        lastName: "La"
+                        lastName: "La",
                       },
                       {
                         id: 15,
                         isActive: false,
                         firstName: "Mehn",
-                        lastName: "Soft"
+                        lastName: "Soft",
                       },
                       {
                         id: 16,
                         isActive: true,
                         firstName: "Nein",
-                        lastName: "gehts"
+                        lastName: "gehts",
                       },
                       {
                         id: 17,
                         isActive: true,
                         firstName: "Rene",
-                        lastName: "La"
-                      }
-                    ].map(tenant => (
+                        lastName: "La",
+                      },
+                    ].map((tenant) => (
                       <GridListTile
                         key={tenant.id}
                         cols={1}

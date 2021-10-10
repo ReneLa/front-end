@@ -1,19 +1,11 @@
+import { fade, makeStyles } from "@material-ui/core/styles";
+import MoreIcon from "@material-ui/icons/MoreHoriz";
 import React from "react";
 import styled from "styled-components";
-import { makeStyles, fade } from "@material-ui/core/styles";
-import {
-  Container,
-  SubHeader,
-  SubText,
-  Text,
-  CaptionText,
-  NormalText,
-} from "../styledComponents";
-import userPhoto from "../../public/static/sandy.jpeg";
-import { Avatar } from "@material-ui/core";
-import MoreIcon from "@material-ui/icons/MoreHoriz";
-import AddIcon from "@material-ui/icons/Add";
 import { formatDate } from "../../lib/dateFormat";
+import {
+  CaptionText, Container, Text
+} from "../styledComponents";
 const useStyles = makeStyles((theme) => ({
   small: {
     width: theme.spacing(6),

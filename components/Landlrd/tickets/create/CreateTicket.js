@@ -1,40 +1,18 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { Mutation } from "react-apollo";
-import gql from "graphql-tag";
-import { ApolloConsumer } from "react-apollo";
 import {
-  Container,
-  ActionButton,
-  Text,
-  Input,
-  TextInput,
-  SubText,
-  OutlinedButton,
-  SubHeader,
-  CaptionText,
-  PrimaryButton,
-  Dropdown,
-} from "../../../styledComponents";
-import UploadIcon from "@material-ui/icons/AddPhotoAlternate";
-import HouseIcon from "@material-ui/icons/Home";
-import { withStyles, makeStyles, useTheme } from "@material-ui/core/styles";
-import {
-  Button,
-  Typography,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogContentText,
-  DialogActions,
-  Avatar,
+  Dialog, DialogContent, DialogTitle
 } from "@material-ui/core";
-
-import { GET_LANDLORD_TICKETS } from "../../../queryComponents/landlord/LandlordTickets";
-import { GET_USER_HOUSES } from "../../../queryComponents/landlord/LandlordHouses";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import CloseIcon from "@material-ui/icons/Close";
-import AddIcon from "@material-ui/icons/AddCircleOutline";
+import gql from "graphql-tag";
+import React, { useState } from "react";
+import { ApolloConsumer, Mutation } from "react-apollo";
+import styled from "styled-components";
+import { GET_USER_HOUSES } from "../../../queryComponents/landlord/LandlordHouses";
+import { GET_LANDLORD_TICKETS } from "../../../queryComponents/landlord/LandlordTickets";
+import {
+  ActionButton, CaptionText, Container, Dropdown, Input, PrimaryButton, SubHeader
+} from "../../../styledComponents";
+
 
 const useStyles = makeStyles((theme) => ({
   dialogPaper: {

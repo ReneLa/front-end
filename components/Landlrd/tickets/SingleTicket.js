@@ -1,47 +1,17 @@
+import {
+  Avatar, Dialog, DialogActions, DialogContent, DialogTitle, Divider
+} from "@material-ui/core";
+import {
+  makeStyles,
+  useTheme
+} from "@material-ui/core/styles";
+import CloseIcon from "@material-ui/icons/Close";
 import React from "react";
 import styled from "styled-components";
-import {
-  Container,
-  ActionButton,
-  IconButton,
-  Text,
-  Input,
-  TextInput,
-  NormalText,
-  SubText,
-  CaptionText,
-  PrimaryButton,
-  Header,
-  SubHeader,
-} from "../../styledComponents";
-import StreetIcon from "@material-ui/icons/LocationOn";
-import userPhoto from "../../../public/static/sandy.jpeg";
-import AdjustIcon from "@material-ui/icons/Adjust";
-import UserIcon from "@material-ui/icons/Face";
-import TimeLineIcon from "@material-ui/icons/Timeline";
-import HouseIcon from "@material-ui/icons/Kitchen";
 import { formatDate } from "../../../lib/dateFormat";
 import {
-  withStyles,
-  makeStyles,
-  useTheme,
-  fade,
-} from "@material-ui/core/styles";
-import {
-  Button,
-  Typography,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogContentText,
-  DialogActions,
-  Avatar,
-  Divider,
-} from "@material-ui/core";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-import CloseIcon from "@material-ui/icons/Close";
-import AddIcon from "@material-ui/icons/AddCircleOutline";
-import Add from "@material-ui/icons/Add";
+  ActionButton, Container, NormalText, PrimaryButton, SubHeader, SubText, Text
+} from "../../styledComponents";
 import TicketItem from "../TicketItem";
 
 const useStyles = makeStyles((theme) => ({

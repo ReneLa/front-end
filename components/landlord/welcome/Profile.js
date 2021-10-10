@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import { Container, Input, FlatButton } from "../../styledComponents";
 import NextIcon from "@material-ui/icons/ArrowRightAlt";
+import Link from "next/link";
+import React from "react";
+import { Container } from "../../styledComponents";
 
 class Profile extends React.Component {
   state = {};

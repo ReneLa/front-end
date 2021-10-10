@@ -1,18 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  Container,
-  SubHeader,
-  SubText,
-  Text,
-  CaptionText,
-} from "../../styledComponents";
-import { Avatar, Divider } from "@material-ui/core";
-import ListIcon from "@material-ui/icons/List";
-import TicketItem from "../TicketItem";
-import SingleTicket from "../tickets/SingleTicket";
-import HouseTicketsQuery from "../../queryComponents/landlord/HouseTickets";
 import loadingImg from "../../../public/static/126.gif";
+import HouseTicketsQuery from "../../queryComponents/landlord/HouseTickets";
+import { Container, SubHeader, Text } from "../../styledComponents";
+import SingleTicket from "../tickets/SingleTicket";
 
 const Wrapper = styled(Container)`
   display: flex;

@@ -1,14 +1,12 @@
-import React from "react";
-import { withStyles, fade } from "@material-ui/core/styles";
-import { Mutation } from "react-apollo";
-import { Select, FormControl, Typography } from "@material-ui/core";
-import gql from "graphql-tag";
-import { theme as customTheme } from "../../../Page";
-import { GET_USER_HOUSES } from "../../../queryComponents/Houses";
-import Houses from "../../../queryComponents/Houses";
-import { Container, FlatButton, Input } from "../../../styledComponents";
+import { FormControl, Select, Typography } from "@material-ui/core";
+import { fade, withStyles } from "@material-ui/core/styles";
 import AddPhotoIcon from "@material-ui/icons/AddPhotoAlternate";
+import gql from "graphql-tag";
+import React from "react";
+import { Mutation } from "react-apollo";
 import loadingImg from "../../../../public/static/126.gif";
+import Houses, { GET_USER_HOUSES } from "../../../queryComponents/Houses";
+import { Container, FlatButton, Input } from "../../../styledComponents";
 
 const ADD_IMAGE_MUTATION = gql`
   mutation ADD_IMAGE_MUTATION($image: String!, $houseId: ID!) {

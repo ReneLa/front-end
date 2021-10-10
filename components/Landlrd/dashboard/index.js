@@ -1,35 +1,24 @@
-import React from "react";
+import { useQuery } from "@apollo/react-hooks";
+import { Avatar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  Container,
-  Text,
-  CaptionText,
-  CommandButton,
-  PrimaryButton,
-  SearchInput,
-  OutlinedButton,
-  ActionButton,
-  IconButton,
-  Header,
-  SubHeader,
-  SubText,
-  NormalText,
-} from "../../styledComponents";
-import styled from "styled-components";
-import User from "../../queryComponents/User";
 import MoreIcon from "@material-ui/icons/MoreHoriz";
 import NotificationIcon from "@material-ui/icons/NotificationsNone";
-import userPhoto from "../../../public/static/sandy.jpeg";
-import { Avatar } from "@material-ui/core";
-import { useQuery } from "@apollo/react-hooks";
+import React from "react";
+import styled from "styled-components";
+import tenantIcon from "../../../public/static/tenant.png";
+import ticketIcon from "../../../public/static/ticket1.png";
+import houseIcon from "../../../public/static/web.png";
+import { GET_USER_HOUSES } from "../../queryComponents/landlord/LandlordHouses";
+import { GET_LANDLORD_TENANTS } from "../../queryComponents/landlord/LandlordTenants";
+import User from "../../queryComponents/User";
+import {
+  ActionButton, Container, Header,
+  SubHeader,
+  SubText, Text
+} from "../../styledComponents";
 import { PAGINATION_QUERY as HOUSE_COUNT_QUERY } from "../houses";
 import { PAGINATION_QUERY as TENANTS_COUNT_QUERY } from "../tenants";
 import { PAGINATION_QUERY as TICKETS_COUNT_QUERY } from "../tickets/AllTickets";
-import { GET_USER_HOUSES } from "../../queryComponents/landlord/LandlordHouses";
-import { GET_LANDLORD_TENANTS } from "../../queryComponents/landlord/LandlordTenants";
-import houseIcon from "../../../public/static/web.png";
-import tenantIcon from "../../../public/static/tenant.png";
-import ticketIcon from "../../../public/static/ticket1.png";
 const useStyles = makeStyles((theme) => ({
   small: {
     width: theme.spacing(5),

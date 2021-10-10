@@ -1,30 +1,22 @@
-import React from "react";
-import styled from "styled-components";
+import { Avatar } from "@material-ui/core";
 import { fade } from "@material-ui/core/styles";
-import {
-  Container,
-  SubHeader,
-  SubText,
-  Text,
-  NormalText,
-  CaptionText,
-} from "../../styledComponents";
-import { Avatar, Divider } from "@material-ui/core";
-import MailIcon from "@material-ui/icons/Mail";
-import PhoneIcon from "@material-ui/icons/LocalPhone";
-import TenantIcon from "@material-ui/icons/PersonPin";
-import BusinessIcon from "@material-ui/icons/Business";
 import ArrowIcon from "@material-ui/icons/ArrowForward";
+import BusinessIcon from "@material-ui/icons/Business";
 // import BathroomIcon from "@material-ui/icons/BathTub";
 import BedIcon from "@material-ui/icons/KingBed";
-import GardenIcon from "@material-ui/icons/AmpStories";
-import CarIcon from "@material-ui/icons/DirectionsCar";
+import PhoneIcon from "@material-ui/icons/LocalPhone";
+import MailIcon from "@material-ui/icons/Mail";
+import TenantIcon from "@material-ui/icons/PersonPin";
 import GraphIcon from "@material-ui/icons/ShowChart";
 import ViewIcon from "@material-ui/icons/Style";
-import MiniTicketItem from "./MiniTicketItem";
-import MbanzaLogo from "../../../public/static/mbanza.png";
-import SingleTicket from "../tickets/SingleTicket";
+import React from "react";
+import styled from "styled-components";
 import CurrentTenant from "../../queryComponents/landlord/CurrentTenant";
+import {
+  CaptionText, Container, NormalText, SubHeader,
+  SubText,
+  Text
+} from "../../styledComponents";
 import AddHouseTenant from "./AddHouseTenant";
 
 const Tag = styled.div`

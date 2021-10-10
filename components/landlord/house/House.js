@@ -1,11 +1,11 @@
-import React from "react";
-import clsx from "clsx";
-import { makeStyles, fade } from "@material-ui/core/styles";
-import { Drawer, Typography, CssBaseline, IconButton } from "@material-ui/core";
+import { CssBaseline, Drawer, IconButton, Typography } from "@material-ui/core";
+import { fade, makeStyles } from "@material-ui/core/styles";
 import BackIcon from "@material-ui/icons/KeyboardBackspace";
+import clsx from "clsx";
+import React from "react";
 import { Container } from "../../styledComponents";
-import UpdateHouse from "./UpdateHouse";
 import DeleteHouse from "./DeleteHouse";
+import UpdateHouse from "./UpdateHouse";
 
 const drawerWidth = 350;
 

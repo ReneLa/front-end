@@ -1,44 +1,24 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { Mutation } from "react-apollo";
-import gql from "graphql-tag";
-import { ApolloConsumer } from "react-apollo";
 import {
-  Container,
-  ActionButton,
-  Text,
-  Input,
-  TextInput,
-  SubText,
-  OutlinedButton,
-  SubHeader,
-  CaptionText,
-  PrimaryButton,
-  Dropdown,
-} from "../../../styledComponents";
-import UploadIcon from "@material-ui/icons/AddPhotoAlternate";
-import HouseIcon from "@material-ui/icons/Home";
-import { withStyles, makeStyles, useTheme } from "@material-ui/core/styles";
-import {
-  Button,
-  Typography,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogContentText,
-  DialogActions,
-  Avatar,
+  Dialog, DialogContent, DialogTitle
 } from "@material-ui/core";
-import { GET_HOUSE_TYPES } from "../../../queryComponents/HouseTypes";
-import { GET_COUNTRIES } from "../../../queryComponents/Countries";
-import { GET_PROVINCES_IN_COUNTRY } from "../../../queryComponents/Provinces";
-import { GET_DISTRICTS_IN_PROVINCE } from "../../../queryComponents/Districts";
-import { GET_LANDLORD_TENANTS } from "../../../queryComponents/landlord/LandlordTenants";
-import { GET_USER_HOUSES } from "../../../queryComponents/landlord/LandlordHouses";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import CloseIcon from "@material-ui/icons/Close";
 import AddIcon from "@material-ui/icons/AddCircleOutline";
+import UploadIcon from "@material-ui/icons/AddPhotoAlternate";
+import gql from "graphql-tag";
+import React, { useState } from "react";
+import { ApolloConsumer, Mutation } from "react-apollo";
+import styled from "styled-components";
 import { PAGINATION_QUERY } from "..";
+import { GET_COUNTRIES } from "../../../queryComponents/Countries";
+import { GET_DISTRICTS_IN_PROVINCE } from "../../../queryComponents/Districts";
+import { GET_HOUSE_TYPES } from "../../../queryComponents/HouseTypes";
+import { GET_USER_HOUSES } from "../../../queryComponents/landlord/LandlordHouses";
+import { GET_LANDLORD_TENANTS } from "../../../queryComponents/landlord/LandlordTenants";
+import { GET_PROVINCES_IN_COUNTRY } from "../../../queryComponents/Provinces";
+import {
+  ActionButton, CaptionText, Container, Dropdown, Input, OutlinedButton, PrimaryButton, SubHeader, TextInput
+} from "../../../styledComponents";
 
 const useStyles = makeStyles((theme) => ({
   dialogPaper: {

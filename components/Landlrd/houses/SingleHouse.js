@@ -1,26 +1,22 @@
-import React from "react";
-import PropTypes from "prop-types";
+import { Avatar, Paper, Tab, Tabs } from "@material-ui/core";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import styled from "styled-components";
-import { Avatar, Tabs, Tab, Paper } from "@material-ui/core";
-import { theme as customTheme } from "../../Page";
-import NumIcon from "@material-ui/icons/FormatAlignRight";
 import DialIcon from "@material-ui/icons/DialPad";
+import NumIcon from "@material-ui/icons/FormatAlignRight";
 import StreetIcon from "@material-ui/icons/LocationOn";
-import userPhoto from "../../../public/static/sandy.jpeg";
+import PropTypes from "prop-types";
+import React from "react";
+import styled from "styled-components";
 import {
-  Container,
   CaptionText,
-  SubText,
+  Container,
+  Header,
   NormalText,
   Text,
-  Header,
 } from "../../styledComponents";
-import hasLogo from "../../../public/static/HAS.png";
-import Overview from "./OverviewTab";
 import CreateBuilding from "./create/CreateBuilding";
-import Tickets from "./TicketsTab";
+import Overview from "./OverviewTab";
 import Tenants from "./TenantsTab";
+import Tickets from "./TicketsTab";
 const StyledTabs = withStyles({
   indicator: {
     backgroundColor: "#1890ff",

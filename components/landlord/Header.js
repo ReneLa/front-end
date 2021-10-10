@@ -1,29 +1,19 @@
-import React from "react";
+import {
+  AppBar, Avatar, CssBaseline, IconButton, Menu,
+  MenuItem, Slide, Toolbar
+} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import MoreIcon from "@material-ui/icons/MoreHoriz";
+import BellIcon from "@material-ui/icons/Notifications";
+import PersonIcon from "@material-ui/icons/Person";
 import clsx from "clsx";
 import Link from "next/link";
-import hasLogo from "../../public/static/HAS.png";
-import userPhoto from "../../public/static/sandy.jpeg";
-import { makeStyles, fade } from "@material-ui/core/styles";
-import {
-  AppBar,
-  Toolbar,
-  CssBaseline,
-  Typography,
-  Avatar,
-  IconButton,
-  Fade,
-  Slide,
-  Menu,
-  MenuItem
-} from "@material-ui/core";
-import BellIcon from "@material-ui/icons/Notifications";
-import MoreIcon from "@material-ui/icons/MoreHoriz";
-import { useRouter } from "next/router";
-import User from "../queryComponents/User";
-import { theme as customTheme } from "../Page";
+import React from "react";
 import LogoutButton from "../../components/landlord/LogoutButton";
-import { Container, CaptionText, SubText } from "../styledComponents";
-import PersonIcon from "@material-ui/icons/Person";
+import userPhoto from "../../public/static/sandy.jpeg";
+import { theme as customTheme } from "../Page";
+import User from "../queryComponents/User";
+import { CaptionText, Container, SubText } from "../styledComponents";
 
 const drawerWidth = 200;
 

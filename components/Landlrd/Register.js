@@ -1,21 +1,14 @@
-import React, { useState } from "react";
-import Link from "next/link";
-import {
-  Container,
-  Text,
-  SubHeader,
-  Input,
-  PrimaryButton,
-  SubText,
-  ActionButton,
-  CaptionText,
-} from "../styledComponents";
-import Router from "next/router";
-import gql from "graphql-tag";
-import styled from "styled-components";
-import { device } from "../../lib/deviceSize";
-import hasLogo from "../../public/static/HAS.png";
 import { useMutation } from "@apollo/react-hooks";
+import gql from "graphql-tag";
+import Link from "next/link";
+import Router from "next/router";
+import React, { useState } from "react";
+import styled from "styled-components";
+import hasLogo from "../../public/static/HAS.png";
+import {
+  Container, Input,
+  PrimaryButton, SubHeader, SubText, Text
+} from "../styledComponents";
 
 const ImgWrapper = styled(Container)`
   flex-direction: column;

@@ -1,9 +1,9 @@
+import gql from "graphql-tag";
 import React from "react";
 import { Mutation } from "react-apollo";
-import { CURRENT_LANDLORD } from "../../queryComponents/Landlord";
-import gql from "graphql-tag";
-import { Container, Input, FlatButton } from "../../styledComponents";
 import loadingImg from "../../../public/static/126.gif";
+import { CURRENT_LANDLORD } from "../../queryComponents/Landlord";
+import { Container, FlatButton, Input } from "../../styledComponents";
 
 const CREATE_LANDLORD_MUTATION = gql`
   mutation CREATE_LANDLORD_MUTATION(

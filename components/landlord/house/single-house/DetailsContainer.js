@@ -1,17 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
 import {
-  Grid,
+  Avatar,
+  Box, Grid,
   Paper,
   Tab,
-  Tabs,
-  Divider,
-  Typography,
-  Avatar,
-  Box
+  Tabs
 } from "@material-ui/core";
-import MoreIcon from "@material-ui/icons/MoreHoriz";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
+import PropTypes from "prop-types";
+import React from "react";
 import { Container } from "../../../styledComponents";
 import AgentCard from "./AgentCard";
 

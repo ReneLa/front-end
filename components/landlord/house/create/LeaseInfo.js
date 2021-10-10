@@ -1,28 +1,27 @@
-import React from "react";
-import { withStyles, fade } from "@material-ui/core/styles";
-import Slide from "react-reveal/Slide";
-import { Mutation } from "react-apollo";
 import {
-  Select,
-  Button,
-  Avatar,
-  Typography,
+  Divider,
   Fade as FadeWrapper,
   FormControl,
-  Paper,
-  InputBase,
-  Divider,
   IconButton,
+  InputBase,
+  Paper,
+  Select,
+  Typography,
 } from "@material-ui/core";
-import gql from "graphql-tag";
+import { fade, withStyles } from "@material-ui/core/styles";
 import LeaseIcon from "@material-ui/icons/NoteAdd";
-import loadingImg from "../../../../public/static/126.gif";
-import { Container, FlatButton, Input } from "../../../styledComponents";
 import SearchIcon from "@material-ui/icons/Search";
-import Leases from "../../../queryComponents/Leases";
-import DeleteParentHouse from "../DeleteParentHouse";
+import gql from "graphql-tag";
+import React from "react";
+import { Mutation } from "react-apollo";
+import Slide from "react-reveal/Slide";
+import loadingImg from "../../../../public/static/126.gif";
 import Houses from "../../../queryComponents/Houses";
-import { GET_USER_HOUSES_LEASES } from "../../../queryComponents/Leases";
+import Leases, {
+  GET_USER_HOUSES_LEASES,
+} from "../../../queryComponents/Leases";
+import { Container, FlatButton, Input } from "../../../styledComponents";
+import DeleteParentHouse from "../DeleteParentHouse";
 
 const CREATE_LEASE_INFO_MUTATION = gql`
   mutation CREATE_LEASE_INFO_MUTATION(

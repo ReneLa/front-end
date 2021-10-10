@@ -1,15 +1,12 @@
-import React from "react";
+import { Avatar, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Typography, Avatar } from "@material-ui/core";
+import AddIcon from "@material-ui/icons/Add";
+import React from "react";
 import {
-  Container,
-  SubText,
-  NormalText,
-  OutlinedButton,
+  Container, NormalText,
+  OutlinedButton, SubText
 } from "../../../styledComponents";
 import AgentCard from "./AgentCard";
-import AddIcon from "@material-ui/icons/Add";
-import HouseDetails from "./HouseDetails";
 import Details from "./Details";
 // import agentPhoto from "../../../../public/static/rene.jpeg";
 // import mbanzaPhoto from "../../../../public/static/mbanza png.png";

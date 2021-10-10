@@ -1,27 +1,24 @@
-import React from "react";
-import { withStyles, fade } from "@material-ui/core/styles";
-import { Mutation } from "react-apollo";
-// import styled, { css } from "styled-components";
-import { GET_USER_HOUSES } from "../../queryComponents/Houses";
-import gql from "graphql-tag";
-import { Typography, IconButton } from "@material-ui/core";
-import Countries from "../../queryComponents/Countries";
-import Provinces from "../../queryComponents/Provinces";
-import Districts from "../../queryComponents/Districts";
+import { IconButton, Typography } from "@material-ui/core";
+import { fade, withStyles } from "@material-ui/core/styles";
 // import Sectors from "../../queryComponents/Sectors";
 import BackIcon from "@material-ui/icons/KeyboardBackspace";
-import HouseTypes from "../../queryComponents/HouseTypes";
-import {
-  Container,
-  FlatButton,
-  PrimaryButton,
-  SubHeader,
-  Text,
-  Input,
-  SubText,
-  CaptionText
-} from "../../styledComponents";
+import gql from "graphql-tag";
+import React from "react";
+import { Mutation } from "react-apollo";
 import loadingImg from "../../../public/static/126.gif";
+import Countries from "../../queryComponents/Countries";
+import Districts from "../../queryComponents/Districts";
+// import styled, { css } from "styled-components";
+import { GET_USER_HOUSES } from "../../queryComponents/Houses";
+import HouseTypes from "../../queryComponents/HouseTypes";
+import Provinces from "../../queryComponents/Provinces";
+import {
+  CaptionText,
+  Container,
+  Input,
+  PrimaryButton,
+  Text,
+} from "../../styledComponents";
 
 const UPDATE_HOUSE_MUTATION = gql`
   mutation UPDATE_HOUSE_MUTATION(
@@ -108,7 +105,7 @@ const UPDATE_HOUSE_MUTATION = gql`
 
 const styles = {
   list: {
-    width: 340
+    width: 340,
   },
   label: {
     display: "flex",
@@ -116,7 +113,7 @@ const styles = {
     border: "1px solid black",
     marginBottom: 10,
     borderRadius: 8,
-    padding: 5
+    padding: 5,
   },
 
   inputStyle: {
@@ -131,9 +128,9 @@ const styles = {
     fontSize: 12,
     "&:focus": {
       border: "1px solid #4C3AF7",
-      backgroundColor: "#FEFEFF"
-    }
-  }
+      backgroundColor: "#FEFEFF",
+    },
+  },
 };
 class UpdateHouse extends React.Component {
   constructor(props) {
@@ -156,11 +153,11 @@ class UpdateHouse extends React.Component {
       countryId: "",
       provinceId: "",
       districtId: "",
-      sectorId: ""
+      sectorId: "",
     };
   }
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -184,7 +181,7 @@ class UpdateHouse extends React.Component {
       countryId,
       provinceId,
       districtId,
-      sectorId
+      sectorId,
     } = this.state;
     const { classes, onClose, house } = this.props;
     let type = house.house_type;
@@ -214,7 +211,7 @@ class UpdateHouse extends React.Component {
           // parent_houseId,
           countryId,
           provinceId,
-          districtId
+          districtId,
           // sectorId
         }}
       >
@@ -234,7 +231,7 @@ class UpdateHouse extends React.Component {
                   padding: 7,
                   position: `-webkit-sticky`,
                   position: "sticky",
-                  top: 0
+                  top: 0,
                 }}
               >
                 <Container flex={1} color="transparent" row center left>
@@ -258,7 +255,7 @@ class UpdateHouse extends React.Component {
               <form
                 method="post"
                 style={{ display: "flex", flexDirection: "column", flex: 1 }}
-                onSubmit={async e => {
+                onSubmit={async (e) => {
                   e.preventDefault();
 
                   await updateHouse();
@@ -282,7 +279,7 @@ class UpdateHouse extends React.Component {
                     countryId: "",
                     provinceId: "",
                     districtId: "",
-                    sectorId: ""
+                    sectorId: "",
                   });
                 }}
               >
@@ -297,7 +294,7 @@ class UpdateHouse extends React.Component {
                     type="text"
                     className={classes.inputStyle}
                     defaultValue={house.house_heading}
-                    onChange={e => {
+                    onChange={(e) => {
                       this.setState({ house_heading: e.target.value });
                     }}
                   />
@@ -307,12 +304,15 @@ class UpdateHouse extends React.Component {
                     customStyles={{ marginBottom: 10 }}
                     color="transparent"
                   >
-                    <CaptionText customStyles={{marginBottom:5}}> Description</CaptionText>
+                    <CaptionText customStyles={{ marginBottom: 5 }}>
+                      {" "}
+                      Description
+                    </CaptionText>
                     <textarea
                       type="text"
                       className={classes.inputStyle}
                       defaultValue={house.house_description}
-                      onChange={e => {
+                      onChange={(e) => {
                         this.setState({ house_description: e.target.value });
                       }}
                     />
@@ -324,7 +324,7 @@ class UpdateHouse extends React.Component {
                     size="small"
                     className={classes.inputStyle}
                     defaultValue={house.house_no}
-                    onChange={e => {
+                    onChange={(e) => {
                       this.setState({ house_heading: e.target.value });
                     }}
                   />
@@ -339,7 +339,7 @@ class UpdateHouse extends React.Component {
                     <select
                       className={classes.inputStyle}
                       value={house_type}
-                      onChange={e => {
+                      onChange={(e) => {
                         this.setState({ house_type: e.target.value });
                       }}
                     >
@@ -351,7 +351,7 @@ class UpdateHouse extends React.Component {
                           if (data) {
                             return (
                               <React.Fragment>
-                                {data.houseTypes.map(type => (
+                                {data.houseTypes.map((type) => (
                                   <option key={type.id} value={type.id}>
                                     {type.house_type}
                                   </option>
@@ -371,7 +371,7 @@ class UpdateHouse extends React.Component {
                       name="no_bedrooms"
                       defaultValue={house.no_bedrooms}
                       className={classes.inputStyle}
-                      onChange={e => {
+                      onChange={(e) => {
                         this.setState({ no_bedrooms: e.target.value });
                       }}
                     />
@@ -382,7 +382,7 @@ class UpdateHouse extends React.Component {
                       name="no_bathrooms"
                       defaultValue={house.no_bathrooms}
                       className={classes.inputStyle}
-                      onChange={e => {
+                      onChange={(e) => {
                         this.setState({ no_bathrooms: e.target.value });
                       }}
                     />
@@ -395,7 +395,7 @@ class UpdateHouse extends React.Component {
                       name="no_annex"
                       defaultValue={house.no_annex}
                       className={classes.inputStyle}
-                      onChange={e => {
+                      onChange={(e) => {
                         this.setState({ no_annex: e.target.value });
                       }}
                     />
@@ -406,7 +406,7 @@ class UpdateHouse extends React.Component {
                       name="dinning_room"
                       defaultValue={house.dinning_room}
                       className={classes.inputStyle}
-                      onChange={e => {
+                      onChange={(e) => {
                         this.setState({ dinning_room: e.target.value });
                       }}
                     />
@@ -422,7 +422,7 @@ class UpdateHouse extends React.Component {
                         // checked={has_garden}
                         defaultChecked={house.has_garden}
                         style={{ marginLeft: 10, marginRight: 5 }}
-                        onChange={e => {
+                        onChange={(e) => {
                           this.setState({ has_garden: !has_garden });
                         }}
                       />
@@ -435,7 +435,7 @@ class UpdateHouse extends React.Component {
                         type="checkbox"
                         defaultChecked={house.has_hotwater}
                         style={{ marginLeft: 10, marginRight: 5 }}
-                        onChange={e => {
+                        onChange={(e) => {
                           this.setState({ has_hotwater: !has_hotwater });
                         }}
                       />
@@ -455,7 +455,7 @@ class UpdateHouse extends React.Component {
                         type="checkbox"
                         style={{ marginLeft: 10, marginRight: 5 }}
                         defaultChecked={house.has_carparking}
-                        onChange={e => {
+                        onChange={(e) => {
                           this.setState({ has_carparking: !has_carparking });
                         }}
                       />
@@ -468,7 +468,7 @@ class UpdateHouse extends React.Component {
                         type="checkbox"
                         defaultChecked={house.has_balcony}
                         style={{ marginLeft: 10, marginRight: 5 }}
-                        onChange={e => {
+                        onChange={(e) => {
                           this.setState({ has_balcony: !has_balcony });
                         }}
                       />
@@ -488,7 +488,7 @@ class UpdateHouse extends React.Component {
                         type="checkbox"
                         defaultChecked={house.has_in_kitchen}
                         style={{ marginLeft: 10, marginRight: 5 }}
-                        onChange={e => {
+                        onChange={(e) => {
                           this.setState({ has_in_kitchen: !has_in_kitchen });
                         }}
                       />
@@ -501,7 +501,7 @@ class UpdateHouse extends React.Component {
                         type="checkbox"
                         style={{ marginLeft: 10, marginRight: 5 }}
                         defaultChecked={house.isActive}
-                        onChange={e => {
+                        onChange={(e) => {
                           this.setState({ isActive: !isActive });
                         }}
                       />
@@ -523,7 +523,7 @@ class UpdateHouse extends React.Component {
                       <select
                         value={countryId}
                         className={classes.inputStyle}
-                        onChange={e => {
+                        onChange={(e) => {
                           this.setState({ countryId: e.target.value });
                         }}
                       >
@@ -533,7 +533,7 @@ class UpdateHouse extends React.Component {
                             if (data) {
                               return (
                                 <React.Fragment>
-                                  {data.countries.map(country => (
+                                  {data.countries.map((country) => (
                                     <option key={country.id} value={country.id}>
                                       {country.name}
                                     </option>
@@ -557,7 +557,7 @@ class UpdateHouse extends React.Component {
                       <select
                         className={classes.inputStyle}
                         value={provinceId}
-                        onChange={e => {
+                        onChange={(e) => {
                           this.setState({ provinceId: e.target.value });
                         }}
                       >
@@ -567,7 +567,7 @@ class UpdateHouse extends React.Component {
                             if (data) {
                               return (
                                 <React.Fragment>
-                                  {data.getProvincesByCountry.map(prov => (
+                                  {data.getProvincesByCountry.map((prov) => (
                                     <option key={prov.id} value={prov.id}>
                                       {prov.name}
                                     </option>
@@ -591,7 +591,7 @@ class UpdateHouse extends React.Component {
                       <select
                         className={classes.inputStyle}
                         value={districtId}
-                        onChange={e => {
+                        onChange={(e) => {
                           this.setState({ districtId: e.target.value });
                         }}
                       >
@@ -601,7 +601,7 @@ class UpdateHouse extends React.Component {
                             if (data) {
                               return (
                                 <React.Fragment>
-                                  {data.getDistrictsByProvince.map(dist => (
+                                  {data.getDistrictsByProvince.map((dist) => (
                                     <option key={dist.id} value={dist.id}>
                                       {dist.name}
                                     </option>
@@ -665,7 +665,7 @@ class UpdateHouse extends React.Component {
                     marginTop: 15,
                     padding: 10,
                     borderTop: `0.8px solid ${fade("#393939", 0.1)}`,
-                    width: "100%"
+                    width: "100%",
                   }}
                 >
                   <PrimaryButton type="submit">

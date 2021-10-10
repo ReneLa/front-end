@@ -1,19 +1,18 @@
-import React from "react";
-import Link from "next/link";
-import PropTypes from "prop-types";
-import { makeStyles, withStyles, fade } from "@material-ui/core/styles";
 import {
-  Paper,
+  Avatar,
+  Divider,
   Grid,
+  Paper,
+  Tab,
   Tabs,
   Typography,
-  Tab,
-  Avatar,
-  Divider
 } from "@material-ui/core";
+import { fade, makeStyles, withStyles } from "@material-ui/core/styles";
+import PropTypes from "prop-types";
+import React from "react";
 import { Container } from "../../../styledComponents";
 
-const TabPanel = props => {
+const TabPanel = (props) => {
   const { children, value, index, ...other } = props;
 
   return (
@@ -43,22 +42,22 @@ const TabPanel = props => {
 TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired
+  value: PropTypes.any.isRequired,
 };
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {},
   gridItem: {
     flex: 1,
     margin: 0,
     paddingRight: 10,
-    paddingLeft: 10
+    paddingLeft: 10,
     // height: "100%",
     // backgroundColor: "green"
   },
   divider: {
     height: 150,
-    margin: 4
-  }
+    margin: 4,
+  },
 }));
 
 const StyledTabs = withStyles({
@@ -69,12 +68,12 @@ const StyledTabs = withStyles({
     "& > div": {
       // maxWidth: 40,
       width: "100%",
-      backgroundColor: "#635ee7"
-    }
-  }
-})(props => <Tabs {...props} TabIndicatorProps={{ children: <div /> }} />);
+      backgroundColor: "#635ee7",
+    },
+  },
+})((props) => <Tabs {...props} TabIndicatorProps={{ children: <div /> }} />);
 
-const StyledTab = withStyles(theme => ({
+const StyledTab = withStyles((theme) => ({
   root: {
     textTransform: "none",
 
@@ -83,10 +82,10 @@ const StyledTab = withStyles(theme => ({
     fontSize: theme.typography.pxToRem(15),
     marginRight: theme.spacing(1),
     "&:focus": {
-      opacity: 1
-    }
-  }
-}))(props => <Tab disableRipple {...props} />);
+      opacity: 1,
+    },
+  },
+}))((props) => <Tab disableRipple {...props} />);
 
 const Index = () => {
   const classes = useStyles();
@@ -99,7 +98,7 @@ const Index = () => {
     id: 1,
     isActive: true,
     firstName: "Rene",
-    lastName: "La"
+    lastName: "La",
   };
   return (
     <Container
@@ -108,7 +107,7 @@ const Index = () => {
       customStyles={{
         marginLeft: 10,
         marginRight: 20,
-        paddingBottom: 10
+        paddingBottom: 10,
       }}
     >
       <Grid
@@ -116,7 +115,7 @@ const Index = () => {
         spacing={0}
         style={{
           flex: 1,
-          height: "100%"
+          height: "100%",
         }}
       >
         <Grid item xs={4} className={classes.gridItem}>
@@ -128,7 +127,7 @@ const Index = () => {
               height: "100%",
               borderRadius: 5,
               paddingLeft: 20,
-              paddingRight: 10
+              paddingRight: 10,
             }}
           >
             <Container flex={0.6} color="transparent" column>
@@ -136,7 +135,7 @@ const Index = () => {
                 <Avatar
                   style={{
                     height: 130,
-                    width: 130
+                    width: 130,
                     // backgroundColor: "#EAECEE"
                   }}
                 >
@@ -299,8 +298,8 @@ const Index = () => {
                     // backgroundColor: ` ${fade("#FEFEFF", 1)}`,
                     borderBottom: `1px solid ${fade("#393939", 0.1)}`,
                     "&:hover": {
-                      backgroundColor: ` ${fade("#FEFEFF", 1)}`
-                    }
+                      backgroundColor: ` ${fade("#FEFEFF", 1)}`,
+                    },
                   }}
                 >
                   <span>kitchen sink not working</span>
@@ -318,8 +317,8 @@ const Index = () => {
                     // backgroundColor: ` ${fade("#FEFEFF", 1)}`,
                     borderBottom: `1px solid ${fade("#393939", 0.1)}`,
                     "&:hover": {
-                      backgroundColor: ` ${fade("#FEFEFF", 1)}`
-                    }
+                      backgroundColor: ` ${fade("#FEFEFF", 1)}`,
+                    },
                   }}
                 >
                   <span>BathTab leak</span>

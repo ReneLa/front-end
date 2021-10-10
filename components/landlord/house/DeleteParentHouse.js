@@ -1,7 +1,7 @@
+import gql from "graphql-tag";
 import React from "react";
 import { Mutation } from "react-apollo";
 import { GET_USER_PARENT_HOUSES } from "../../queryComponents/ParentHouses";
-import gql from "graphql-tag";
 
 const DELETE_PARENT_HOUSE = gql`
   mutation DELETE_PARENT_HOUSE($id: ID!) {

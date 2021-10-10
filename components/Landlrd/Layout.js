@@ -1,31 +1,15 @@
-import React from "react";
-import styled from "styled-components";
-import Link from "next/link";
-import { makeStyles } from "@material-ui/core/styles";
 import {
-  Drawer,
-  IconButton,
-  CssBaseline,
-  Fade,
-  Badge,
-  Slide,
-  Menu,
-  MenuItem,
+  Avatar, Badge, CssBaseline, Drawer, Fade, IconButton, Menu,
+  MenuItem
 } from "@material-ui/core";
-import User from "../queryComponents/User";
-import { theme as customTheme } from "../Page";
-import UserIcon from "@material-ui/icons/PersonPin";
-import PersonIcon from "@material-ui/icons/Person";
-import {
-  Container,
-  SubText,
-  SubHeader,
-  Text,
-  CaptionText,
-} from "../styledComponents";
+import { makeStyles } from "@material-ui/core/styles";
+import React from "react";
 import hasLogo from "../../public/static/HAS.png";
-import userPhoto from "../../public/static/rene.jpeg";
-import { Avatar } from "@material-ui/core";
+import { theme as customTheme } from "../Page";
+import User from "../queryComponents/User";
+import {
+  Container, SubHeader, SubText
+} from "../styledComponents";
 import ActiveLink from "./ActiveLink";
 import LogoutButton from "./LogoutButton";
 

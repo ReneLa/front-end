@@ -1,25 +1,22 @@
-import React from "react";
-import { withStyles, fade } from "@material-ui/core/styles";
-import { Mutation } from "react-apollo";
 import {
-  Select,
-  Button,
-  Avatar,
-  IconButton,
-  Typography,
+  Divider,
   Fade,
-  Paper,
+  IconButton,
   InputBase,
-  Divider
+  Paper,
+  Typography,
 } from "@material-ui/core";
-import gql from "graphql-tag";
-import SearchIcon from "@material-ui/icons/Search";
+import { fade, withStyles } from "@material-ui/core/styles";
 import BuildingIcon from "@material-ui/icons/Apartment";
-import { theme as customTheme } from "../../../Page";
+import SearchIcon from "@material-ui/icons/Search";
+import gql from "graphql-tag";
+import React from "react";
+import { Mutation } from "react-apollo";
 import loadingImg from "../../../../public/static/126.gif";
+import ParentHouses, {
+  GET_USER_PARENT_HOUSES,
+} from "../../../queryComponents/ParentHouses";
 import { Container, FlatButton, Input } from "../../../styledComponents";
-import ParentHouses from "../../../queryComponents/ParentHouses";
-import { GET_USER_PARENT_HOUSES } from "../../../queryComponents/ParentHouses";
 import DeleteParentHouse from "../DeleteParentHouse";
 
 const CREATE_PARENT_HOUSE_MUTATION = gql`
@@ -41,36 +38,36 @@ const CREATE_PARENT_HOUSE_MUTATION = gql`
   }
 `;
 
-const styles = theme => ({
+const styles = (theme) => ({
   list: {
     width: "100%",
-    alignItems: "center"
+    alignItems: "center",
   },
   formControl: {
     marginTop: theme.spacing(2),
-    maxWidth: 120
+    maxWidth: 120,
   },
   button: {
-    margin: theme.spacing(1)
+    margin: theme.spacing(1),
   },
   input: {
-    display: "none"
+    display: "none",
   },
   search: {
     position: "relative",
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
     "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25)
+      backgroundColor: fade(theme.palette.common.white, 0.25),
     },
     marginRight: theme.spacing(2),
     marginLeft: 0,
     width: "100%",
     [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(3),
-      width: "auto"
-    }
-  }
+      width: "auto",
+    },
+  },
 });
 
 class Buildings extends React.Component {
@@ -110,7 +107,7 @@ class Buildings extends React.Component {
             customStyles={{
               width: "100%",
               borderRadius: 2,
-              border: `1px solid ${fade("#393939", 0.1)}`
+              border: `1px solid ${fade("#393939", 0.1)}`,
             }}
           >
             <Container row space="space-between" customStyles={{ padding: 10 }}>
@@ -118,7 +115,7 @@ class Buildings extends React.Component {
               <span>address</span>
               <span>action</span>
             </Container>
-            {buildings.map(building => {
+            {buildings.map((building) => {
               return (
                 <Container
                   key={building.id}
@@ -130,8 +127,8 @@ class Buildings extends React.Component {
                     cursor: "pointer",
                     borderTop: `1px solid ${fade("#393939", 0.1)}`,
                     "&:hover": {
-                      backgroundColor: ` ${fade("#FEFEFF", 1)}`
-                    }
+                      backgroundColor: ` ${fade("#FEFEFF", 1)}`,
+                    },
                   }}
                 >
                   <span>{building.building_name}</span>
@@ -147,7 +144,7 @@ class Buildings extends React.Component {
               center
               customStyles={{
                 padding: 10,
-                borderTop: `1px solid ${fade("#393939", 0.1)}`
+                borderTop: `1px solid ${fade("#393939", 0.1)}`,
               }}
               middle
             >
@@ -167,26 +164,26 @@ const BuildingsList = withStyles({
     padding: "2px 4px",
     display: "flex",
     alignItems: "center",
-    width: 200
+    width: 200,
   },
   input: {
     marginLeft: 10,
-    flex: 1
+    flex: 1,
   },
   iconButton: {
-    padding: 10
+    padding: 10,
   },
   divider: {
     height: 28,
-    margin: 4
-  }
+    margin: 4,
+  },
 })(Buildings);
 class CreateParentHouse extends React.Component {
   state = {
     building_name: "",
     address: "",
     image: null,
-    showForm: false
+    showForm: false,
   };
   createForm = () => {
     this.setState({ showForm: true });
@@ -194,10 +191,10 @@ class CreateParentHouse extends React.Component {
   closeCreateForm = () => {
     this.setState({ showForm: false });
   };
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
-  uploadImage = async e => {
+  uploadImage = async (e) => {
     const files = e.target.files;
     const data = new FormData();
     data.append("file", files[0]);
@@ -207,14 +204,14 @@ class CreateParentHouse extends React.Component {
       "https://api.cloudinary.com/v1_1/dsubmyluz/image/upload/",
       {
         method: "POST",
-        body: data
+        body: data,
       }
     );
     const file = await res.json();
 
     if (file) {
       this.setState({
-        image: file.secure_url
+        image: file.secure_url,
       });
     }
   };
@@ -240,7 +237,7 @@ class CreateParentHouse extends React.Component {
               paddingLeft: 10,
               paddingRight: 15,
               height: 64,
-              border: `0.5px solid ${fade("#393939", 0.2)}`
+              border: `0.5px solid ${fade("#393939", 0.2)}`,
             }}
           >
             <div />
@@ -273,18 +270,18 @@ class CreateParentHouse extends React.Component {
                         flexDirection: "column",
                         // justifyContent: "center",
                         // alignItems: "center",
-                        flex: 1
+                        flex: 1,
                       }}
-                      onSubmit={async e => {
+                      onSubmit={async (e) => {
                         e.preventDefault();
 
-                        await createParentHouse().then(res => {
+                        await createParentHouse().then((res) => {
                           this.closeCreateForm();
                         });
                         this.setState({
                           building_name: "",
                           address: "",
-                          image: null
+                          image: null,
                           // showForm: false
                         });
                       }}
@@ -304,9 +301,9 @@ class CreateParentHouse extends React.Component {
                           style={{
                             width: "50%",
                             marginTop: 40,
-                            marginBottom: 20
+                            marginBottom: 20,
                           }}
-                          onChange={e => {
+                          onChange={(e) => {
                             this.setState({ building_name: e.target.value });
                           }}
                         />
@@ -325,7 +322,7 @@ class CreateParentHouse extends React.Component {
                               style={{
                                 width: 40,
                                 height: 35,
-                                objectFit: "fit"
+                                objectFit: "fit",
                               }}
                             />
                           )}
@@ -344,7 +341,7 @@ class CreateParentHouse extends React.Component {
                           marginTop: 15,
                           padding: 10,
                           borderTop: `0.5px solid ${fade("#393939", 0.2)}`,
-                          width: "100%"
+                          width: "100%",
                         }}
                       >
                         <FlatButton type="submit">
@@ -404,7 +401,7 @@ class CreateParentHouse extends React.Component {
                             fontSize: 18,
                             color: "black",
                             fontWeight: 600,
-                            marginTop: 15
+                            marginTop: 15,
                           }}
                         >
                           Add New Building
@@ -413,7 +410,7 @@ class CreateParentHouse extends React.Component {
                           style={{
                             fontSize: 13,
                             fontWeight: 200,
-                            marginTop: 10
+                            marginTop: 10,
                           }}
                         >
                           You have more than one house with in a
@@ -422,7 +419,7 @@ class CreateParentHouse extends React.Component {
                           style={{
                             fontSize: 13,
                             fontWeight: 200,
-                            marginBottom: 15
+                            marginBottom: 15,
                           }}
                         >
                           single building, add them in to a building

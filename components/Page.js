@@ -1,11 +1,9 @@
-import React, { Component } from "react";
-import Meta from "./Meta";
-import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
-// import { theme } from "../theme/Theme";
-import { StylesProvider } from "@material-ui/styles";
-import Container from "./styledComponents/Container";
 import Router from "next/router";
 import NProgress from "nprogress";
+import React, { Component } from "react";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
+import Meta from "./Meta";
+import Container from "./styledComponents/Container";
 
 Router.onRouteChangeStart = () => {
   NProgress.start();

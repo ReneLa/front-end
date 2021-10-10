@@ -1,33 +1,18 @@
-import React from "react";
-import gql from "graphql-tag";
-import { Query } from "react-apollo";
-import {
-  Container,
-  Text,
-  CommandButton,
-  PrimaryButton,
-  SearchInput,
-  OutlinedButton,
-  SubText,
-  ActionButton,
-  IconButton,
-  Header,
-  SubHeader,
-  CaptionText,
-  Input,
-  TextInput,
-} from "../../styledComponents";
-import SearchHouses from "../../queryComponents/SearchHouses";
-import styled from "styled-components";
-import HouseItem from "../HouseItem";
-import CreateHouse from "./create/CreateHouse";
-import { Divider, Icon } from "@material-ui/core";
 import HomeIcon from "@material-ui/icons/HomeWork";
-import DecreaseIcon from "@material-ui/icons/ArrowDropDown";
 import BackIcon from "@material-ui/icons/KeyboardArrowLeft";
 import NextIcon from "@material-ui/icons/KeyboardArrowRight";
+import gql from "graphql-tag";
+import React from "react";
+import { Query } from "react-apollo";
+import styled from "styled-components";
 import { perPage } from "../../../config";
 import loadingImg from "../../../public/static/126.gif";
+import SearchHouses from "../../queryComponents/SearchHouses";
+import {
+  CaptionText, Container, Header, IconButton, SubHeader, SubText
+} from "../../styledComponents";
+import HouseItem from "../HouseItem";
+import CreateHouse from "./create/CreateHouse";
 
 const SearchWrapper = styled(Container)`
   display: flex;

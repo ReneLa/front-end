@@ -1,22 +1,15 @@
-import React, { useState } from "react";
+import gql from "graphql-tag";
 import Link from "next/link";
 import Router from "next/router";
+import React, { useState } from "react";
 import { Mutation } from "react-apollo";
-import gql from "graphql-tag";
+import styled from "styled-components";
+import hasLogo from "../../public/static/HAS.png";
 import { CURRENT_USER_QUERY } from "../queryComponents/landlord/CurrentUser";
 import {
-  Container,
-  Text,
-  SubHeader,
-  Input,
-  PrimaryButton,
-  SubText,
-  ActionButton,
-  CaptionText,
+  Container, Input,
+  PrimaryButton, SubHeader, SubText, Text
 } from "../styledComponents";
-import styled from "styled-components";
-import { device } from "../../lib/deviceSize";
-import hasLogo from "../../public/static/HAS.png";
 
 const ImgWrapper = styled(Container)`
   flex-direction: column;

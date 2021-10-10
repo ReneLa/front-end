@@ -1,39 +1,18 @@
-import React from "react";
-import { withStyles, fade } from "@material-ui/core/styles";
-import styled from "styled-components";
-import { Mutation } from "react-apollo";
-import { GET_USER_HOUSES } from "../../../queryComponents/Houses";
 import {
-  TextField,
-  FormControl,
-  FormGroup,
-  FormControlLabel,
-  Checkbox,
-  Select,
-  Divider,
-  Avatar
+  Checkbox, Divider, FormControlLabel, FormGroup
 } from "@material-ui/core";
-import gql from "graphql-tag";
+import { withStyles } from "@material-ui/core/styles";
 import AddIcon from "@material-ui/icons/Add";
 import UploadIcon from "@material-ui/icons/CloudUpload";
-import CheckBoxIcon from "@material-ui/icons/CheckBox";
 import TagIcon from "@material-ui/icons/LocalOffer";
-import { theme as customTheme } from "../../../Page";
-import Countries from "../../../queryComponents/Countries";
-import Provinces from "../../../queryComponents/Provinces";
-import Districts from "../../../queryComponents/Districts";
-// import Sectors from "../../queryComponents/Sectors";
-import HouseTypes from "../../../queryComponents/HouseTypes";
+import gql from "graphql-tag";
+import React from "react";
+import { Mutation } from "react-apollo";
+import styled from "styled-components";
+import { GET_USER_HOUSES } from "../../../queryComponents/Houses";
 import {
-  Container,
-  FlatButton,
-  Input,
-  TextInput,
-  ActionButton,
-  SubText,
-  CaptionText
+  ActionButton, CaptionText, Container, TextInput
 } from "../../../styledComponents";
-import loadingImg from "../../../../public/static/126.gif";
 
 const CREATE_HOUSE_MUTATION = gql`
   mutation CREATE_HOUSE_MUTATION(
@@ -128,14 +107,14 @@ const ActionBtn = styled(ActionButton)`
   background-color: ${({ theme }) => theme.lightGrey};
 `;
 
-const styles = theme => ({
+const styles = (theme) => ({
   list: {
     width: "100%",
-    alignItems: "center"
+    alignItems: "center",
   },
   formControl: {
     marginTop: theme.spacing(2),
-    maxWidth: 120
+    maxWidth: 120,
   },
   inputStyle: {
     border: 0,
@@ -150,37 +129,37 @@ const styles = theme => ({
     fontSize: 12,
     "&:focus": {
       border: "1px solid #4C3AF7",
-      backgroundColor: "#FEFEFF"
-    }
+      backgroundColor: "#FEFEFF",
+    },
   },
   button: {
-    margin: theme.spacing(1)
+    margin: theme.spacing(1),
   },
   actionsContainer: {
-    marginBottom: theme.spacing(2)
+    marginBottom: theme.spacing(2),
   },
   resetContainer: {
-    padding: theme.spacing(3)
+    padding: theme.spacing(3),
   },
   headerStyle: {
     fontWeight: "500",
-    fontSize: 14
+    fontSize: 14,
   },
   checkStyle: {
     fontWeight: "400",
-    fontSize: 12
-  }
+    fontSize: 12,
+  },
 });
 
 const GreenCheckbox = withStyles({
   root: {
     color: "green",
     "&$checked": {
-      color: "red"
-    }
+      color: "red",
+    },
   },
-  checked: {}
-})(props => <Checkbox color="default" {...props} />);
+  checked: {},
+})((props) => <Checkbox color="default" {...props} />);
 class CreateHouse extends React.Component {
   state = {
     createdHouses: [],
@@ -204,9 +183,9 @@ class CreateHouse extends React.Component {
     provinceId: "",
     districtId: "",
     sectorId: "",
-    success: false
+    success: false,
   };
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -237,7 +216,7 @@ class CreateHouse extends React.Component {
       districtId,
       sectorId,
       createdHouses,
-      success
+      success,
     } = this.state;
     const { classes } = this.props;
 
@@ -263,7 +242,7 @@ class CreateHouse extends React.Component {
           // parent_houseId,
           countryId,
           provinceId,
-          districtId
+          districtId,
           // sectorId
         }}
       >
@@ -278,15 +257,15 @@ class CreateHouse extends React.Component {
                   flexDirection: "column",
                   flex: 1,
                   padding: 15,
-                  position: "relative"
+                  position: "relative",
                 }}
-                onSubmit={async e => {
+                onSubmit={async (e) => {
                   e.preventDefault();
                   await createHouse()
-                    .then(res => {
+                    .then((res) => {
                       this.setState({ success: true });
                     })
-                    .catch(err => {
+                    .catch((err) => {
                       alert(err);
                     });
 
@@ -309,7 +288,7 @@ class CreateHouse extends React.Component {
                     countryId: "",
                     provinceId: "",
                     districtId: "",
-                    sectorId: ""
+                    sectorId: "",
                   });
                 }}
               >
@@ -319,7 +298,7 @@ class CreateHouse extends React.Component {
                   center
                   customStyles={{
                     paddingTop: 20,
-                    paddingBottom: 20
+                    paddingBottom: 20,
                   }}
                 >
                   <Container row center flex={1}>
@@ -355,7 +334,7 @@ class CreateHouse extends React.Component {
                     placeholder="start typing ..."
                     type="text"
                     value={house_heading}
-                    onChange={e => {
+                    onChange={(e) => {
                       this.setState({ house_heading: e.target.value });
                     }}
                     customStyles={{ width: 200 }}
@@ -364,7 +343,7 @@ class CreateHouse extends React.Component {
                     label="House Number"
                     type="text"
                     value={house_no}
-                    onChange={e => {
+                    onChange={(e) => {
                       this.setState({ house_no: e.target.value });
                     }}
                     customStyles={{ width: 200 }}
@@ -383,9 +362,9 @@ class CreateHouse extends React.Component {
                     placeholder="start typing here..."
                     className={classes.inputStyle}
                     value={house_description}
-                    onChange={e => {
+                    onChange={(e) => {
                       this.setState({
-                        house_description: e.target.value
+                        house_description: e.target.value,
                       });
                     }}
                   />
@@ -396,7 +375,7 @@ class CreateHouse extends React.Component {
                   customStyles={{
                     width: "100%",
                     paddingTop: 15,
-                    paddingBottom: 5
+                    paddingBottom: 5,
                   }}
                 >
                   <CaptionText
@@ -414,7 +393,7 @@ class CreateHouse extends React.Component {
                       type="number"
                       placeholder="..."
                       value={no_bedrooms}
-                      onChange={e => {
+                      onChange={(e) => {
                         this.setState({ no_bedrooms: e.target.value });
                       }}
                       customStyles={{ width: 80 }}
@@ -424,7 +403,7 @@ class CreateHouse extends React.Component {
                       type="number"
                       placeholder="..."
                       value={no_bathrooms}
-                      onChange={e => {
+                      onChange={(e) => {
                         this.setState({ no_bathrooms: e.target.value });
                       }}
                       row
@@ -436,7 +415,7 @@ class CreateHouse extends React.Component {
                       placeholder="..."
                       value={no_annex}
                       row
-                      onChange={e => {
+                      onChange={(e) => {
                         this.setState({ no_annex: e.target.value });
                       }}
                       customStyles={{ width: 80 }}
@@ -446,7 +425,7 @@ class CreateHouse extends React.Component {
                       type="number"
                       placeholder="..."
                       value={dinning_room}
-                      onChange={e => {
+                      onChange={(e) => {
                         this.setState({ dinning_room: e.target.value });
                       }}
                       row
@@ -460,7 +439,7 @@ class CreateHouse extends React.Component {
                     customStyles={{
                       width: "100%",
                       paddingTop: 10,
-                      paddingBottom: 20
+                      paddingBottom: 20,
                     }}
                   >
                     <FormGroup column>
@@ -468,7 +447,7 @@ class CreateHouse extends React.Component {
                         control={
                           <GreenCheckbox
                             checked={has_hotwater}
-                            onChange={e => {
+                            onChange={(e) => {
                               this.setState({ has_hotwater: !has_hotwater });
                             }}
                             name="hot_water"
@@ -480,9 +459,9 @@ class CreateHouse extends React.Component {
                         control={
                           <GreenCheckbox
                             checked={has_carparking}
-                            onChange={e => {
+                            onChange={(e) => {
                               this.setState({
-                                has_carparking: !has_carparking
+                                has_carparking: !has_carparking,
                               });
                             }}
                             name="parking"
@@ -494,9 +473,9 @@ class CreateHouse extends React.Component {
                         control={
                           <GreenCheckbox
                             checked={has_in_kitchen}
-                            onChange={e => {
+                            onChange={(e) => {
                               this.setState({
-                                has_in_kitchen: !has_in_kitchen
+                                has_in_kitchen: !has_in_kitchen,
                               });
                             }}
                             name="kitchen"
@@ -508,7 +487,7 @@ class CreateHouse extends React.Component {
                         control={
                           <GreenCheckbox
                             checked={has_balcony}
-                            onChange={e => {
+                            onChange={(e) => {
                               this.setState({ has_balcony: !has_balcony });
                             }}
                             name="balcony"
@@ -520,7 +499,7 @@ class CreateHouse extends React.Component {
                         control={
                           <GreenCheckbox
                             checked={has_garden}
-                            onChange={e => {
+                            onChange={(e) => {
                               this.setState({ has_garden: !has_garden });
                             }}
                             name="garden"
@@ -538,7 +517,7 @@ class CreateHouse extends React.Component {
                   customStyles={{
                     width: "100%",
                     paddingTop: 10,
-                    paddingBottom: 20
+                    paddingBottom: 20,
                   }}
                 >
                   <CaptionText customStyles={{ marginBottom: 5 }}>

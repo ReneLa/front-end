@@ -1,44 +1,23 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import {
-  Container,
-  ActionButton,
-  IconButton,
-  Text,
-  Input,
-  TextInput,
-  SubText,
-  CaptionText,
-  PrimaryButton,
-  Header,
-  SubHeader,
-} from "../../../styledComponents";
-import gql from "graphql-tag";
-import { ApolloConsumer, Mutation } from "react-apollo";
 import { useMutation } from "@apollo/react-hooks";
-import userPhoto from "../../../../public/static/sandy.jpeg";
-import CheckIcon from "@material-ui/icons/Done";
-import HouseIcon from "@material-ui/icons/Home";
-import { withStyles, makeStyles, useTheme } from "@material-ui/core/styles";
 import {
-  Button,
-  Typography,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogContentText,
-  DialogActions,
-  Avatar,
-  Divider,
+  Avatar, Dialog, DialogActions, DialogContent, DialogTitle, Divider
 } from "@material-ui/core";
-import ParentHouses, {
-  GET_USER_PARENT_HOUSES,
-} from "../../../queryComponents/ParentHouses";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import CloseIcon from "@material-ui/icons/Close";
-import AddIcon from "@material-ui/icons/AddCircleOutline";
 import Add from "@material-ui/icons/Add";
+import CloseIcon from "@material-ui/icons/Close";
+import CheckIcon from "@material-ui/icons/Done";
+import gql from "graphql-tag";
+import React, { useState } from "react";
+import { Mutation } from "react-apollo";
+import styled from "styled-components";
 import loadingImg from "../../../../public/static/126.gif";
+import ParentHouses, {
+  GET_USER_PARENT_HOUSES
+} from "../../../queryComponents/ParentHouses";
+import {
+  ActionButton, CaptionText, Container, Header, IconButton, Input, PrimaryButton, SubHeader
+} from "../../../styledComponents";
 
 const useStyles = makeStyles((theme) => ({
   dialogPaper: {

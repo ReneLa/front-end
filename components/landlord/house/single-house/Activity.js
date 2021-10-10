@@ -1,7 +1,7 @@
-import React from "react";
-import { makeStyles, fade } from "@material-ui/core/styles";
-import { Container, Text, CaptionText } from "../../../styledComponents";
 import { Avatar } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import React from "react";
+import { CaptionText, Container, Text } from "../../../styledComponents";
 const useStyles = makeStyles(theme => ({}));
 
 const Activity = ({ house }) => {

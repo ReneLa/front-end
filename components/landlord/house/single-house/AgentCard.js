@@ -1,21 +1,17 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import { Avatar, IconButton } from "@material-ui/core";
-import {
-  Container,
-  PrimaryButton,
-  SubText,
-  Text,
-  NormalText,
-  OutlinedButton,
-  ActionButton,
-  CommandButton
-} from "../../../styledComponents";
-import MoreIcon from "@material-ui/icons/MoreHoriz";
-import StarIcon from "@material-ui/icons/Star";
+import { makeStyles } from "@material-ui/core/styles";
 import MailIcon from "@material-ui/icons/Mail";
+import MoreIcon from "@material-ui/icons/MoreHoriz";
 import SearchIcon from "@material-ui/icons/Search";
+import StarIcon from "@material-ui/icons/Star";
+import React from "react";
 import agentPhoto from "../../../../public/static/rene.jpeg";
+import {
+  ActionButton,
+  CommandButton, Container,
+  PrimaryButton,
+  SubText
+} from "../../../styledComponents";
 
 const useStyles = makeStyles(theme => ({}));
 

@@ -1,17 +1,15 @@
-import React from "react";
+import gql from "graphql-tag";
 import Link from "next/link";
 import Router from "next/router";
-import hasLogo from "../../public/static/HAS.png";
+import React from "react";
 import { Mutation } from "react-apollo";
-import gql from "graphql-tag";
+import loadingImg from "../../public/static/126.gif";
+import hasLogo from "../../public/static/HAS.png";
 import { CURRENT_USER_QUERY } from "../queryComponents/User";
 import {
   Container,
-  Input,
-  ActionButton,
-  PrimaryButton
+  Input, PrimaryButton
 } from "../styledComponents";
-import loadingImg from "../../public/static/126.gif";
 
 const SIGNUP_MUTATION = gql`
   mutation SIGNUP_MUTATION(

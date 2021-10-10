@@ -1,20 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import {
-  Container,
-  SubHeader,
-  SubText,
-  Text,
-  CaptionText
+  Container
 } from "../../styledComponents";
-import { Avatar, Divider } from "@material-ui/core";
-import MailIcon from "@material-ui/icons/Mail";
-import BathroomIcon from "@material-ui/icons/BathTub";
-import BedIcon from "@material-ui/icons/KingBed";
-import GardenIcon from "@material-ui/icons/AmpStories";
-import CarIcon from "@material-ui/icons/DirectionsCar";
-import GraphIcon from "@material-ui/icons/ShowChart";
-import ViewIcon from "@material-ui/icons/Style";
 import TicketItem from "../TicketItem";
 import SingleTicket from "../tickets/SingleTicket";
 

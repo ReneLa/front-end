@@ -1,20 +1,11 @@
-import React from "react";
-import { makeStyles, fade } from "@material-ui/core/styles";
-import HouseIcon from "@material-ui/icons/Home";
-import {
-  Container,
-  Title,
-  SubHeader,
-  Header,
-  Text,
-  SubText,
-  CaptionText,
-  NormalText,
-  OutlinedButton
-} from "../../../styledComponents";
-import { Typography, Divider } from "@material-ui/core";
+import { Divider } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import CheckIcon from "@material-ui/icons/Check";
 import TimesIcon from "@material-ui/icons/Close";
+import React from "react";
+import {
+  CaptionText, Container, OutlinedButton, SubText, Text
+} from "../../../styledComponents";
 import Activity from "./Activity";
 
 const useStyles = makeStyles(theme => ({}));

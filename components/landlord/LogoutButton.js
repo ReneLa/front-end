@@ -1,10 +1,10 @@
+import { MenuItem } from "@material-ui/core";
+import LogoutIcon from "@material-ui/icons/PowerSettingsNew";
+import gql from "graphql-tag";
+import Router from "next/router";
 import React from "react";
 import { Mutation } from "react-apollo";
 import { CURRENT_USER_QUERY } from "../queryComponents/User";
-import gql from "graphql-tag";
-import Router from "next/router";
-import LogoutIcon from "@material-ui/icons/PowerSettingsNew";
-import { IconButton, MenuItem } from "@material-ui/core";
 import { SubText } from "../styledComponents";
 const LOGOUT_MUTATION = gql`
   mutation LOGOUT_MUTATION {

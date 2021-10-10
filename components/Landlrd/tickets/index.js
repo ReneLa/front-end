@@ -1,20 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
+import { Paper, Tab, Tabs } from "@material-ui/core";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import {
-  Container,
-  Text,
-  CommandButton,
-  PrimaryButton,
-  SearchInput,
-  OutlinedButton,
-  ActionButton,
-} from "../../styledComponents";
-import { Avatar, Tabs, Tab, Typography, Box, Paper } from "@material-ui/core";
+import PropTypes from "prop-types";
+import React from "react";
 import styled from "styled-components";
+import {
+  ActionButton, Container
+} from "../../styledComponents";
 import AllTickets from "./AllTickets";
-import PendingTickets from "./PendingTickets";
-import ClosedTickets from "./ClosedTickets";
 
 const useStyles = makeStyles((theme) => ({
   small: {

@@ -1,6 +1,6 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
+import { makeStyles } from "@material-ui/core/styles";
+import React from "react";
 import { Container } from "../styledComponents";
 
 const useStyles = makeStyles({});

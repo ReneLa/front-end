@@ -1,11 +1,8 @@
-import React from "react";
-import styled from "styled-components";
 import { makeStyles } from "@material-ui/core/styles";
-import { Drawer, IconButton, CssBaseline } from "@material-ui/core";
+import React from "react";
 import { theme as customTheme } from "../Page";
 import { Container } from "../styledComponents";
 
-import ActiveLink from "../ActiveLink";
 
 const useStyles = makeStyles(theme => ({
   menuButton: {

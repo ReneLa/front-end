@@ -1,59 +1,39 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Link from "next/link";
-import styled from "styled-components";
 import {
-  Typography,
-  Paper,
-  InputBase,
-  Divider,
-  IconButton,
-  GridList,
-  Avatar,
-  Chip,
-  Button,
-  GridListTile
+  Avatar, Button, Chip, Divider,
+  IconButton, InputBase, Paper, Typography
 } from "@material-ui/core";
-import { theme as customTheme } from "../../Page";
-import ListIcon from "@material-ui/icons/List";
-import GridIcon from "@material-ui/icons/ViewModule";
+import { makeStyles } from "@material-ui/core/styles";
 import AddIcon from "@material-ui/icons/AddCircleOutline";
 import CheckIcon from "@material-ui/icons/CheckCircleOutline";
-import BedIcon from "@material-ui/icons/SingleBed";
-import BathroomIcon from "@material-ui/icons/Bathtub";
+import ListIcon from "@material-ui/icons/List";
+// import BathroomIcon from "@material-ui/icons/Bathtub";
 import SearchIcon from "@material-ui/icons/Search";
+import BedIcon from "@material-ui/icons/SingleBed";
+import GridIcon from "@material-ui/icons/ViewModule";
+import Link from "next/link";
+import React from "react";
+import styled from "styled-components";
+import userPhoto from "../../../public/static/sandy.jpeg";
+import {
+  ActionButton, CaptionText, CommandButton, Container, NormalText, SubText
+} from "../../styledComponents";
 import CustomDrawer from "../Drawer";
 import CreateNewHouse from "./create";
-import Houses from "../../queryComponents/Houses";
-import {
-  Container,
-  PrimaryButton,
-  ActionButton,
-  CommandButton,
-  SubText,
-  CaptionText,
-  NormalText,
-  Text
-} from "../../styledComponents";
-import userPhoto from "../../../public/static/sandy.jpeg";
-import DeleteHouse from "./DeleteHouse";
-import loadingImg from "../../../public/static/126.gif";
 import UpdateHouse from "./UpdateHouse";
-import DataTable from "../../DataTable";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flex: 1,
     height: 500,
     flexDirection: "column",
-    padding: theme.spacing(1)
+    padding: theme.spacing(1),
   },
   toolbar: {
     display: "flex",
     alignItems: "center",
     flexDirection: "row",
-    marginBottom: theme.spacing(2)
+    marginBottom: theme.spacing(2),
     // padding: theme.spacing(0)
     // ...theme.mixins.toolbar
   },
@@ -67,32 +47,32 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: "4px",
     display: "flex",
     alignItems: "center",
-    width: 200
+    width: 200,
   },
   input: {
     marginLeft: 10,
     fontSize: 13,
-    flex: 1
+    flex: 1,
   },
   iconButton: {
     padding: 10,
-    borderRadius: 0
+    borderRadius: 0,
   },
   divider: {
-    height: 33
+    height: 33,
   },
   dividerLine: {
-    width: "100%"
+    width: "100%",
   },
   gridList: {
     display: "flex",
     flex: 1,
 
     height: "100%",
-    overflowY: "hidden"
+    overflowY: "hidden",
   },
   icon: {
-    color: "rgba(255, 255, 255, 0.54)"
+    color: "rgba(255, 255, 255, 0.54)",
   },
   houseTileStyle: {
     margin: 5,
@@ -102,31 +82,31 @@ const useStyles = makeStyles(theme => ({
     boxShadow: `0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132),
     0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108)`,
     "&:hover": {
-      transform: `scale(1.005) translate(0.2px, 0px)`
-    }
+      transform: `scale(1.005) translate(0.2px, 0px)`,
+    },
   },
   tileWrapper: {
     width: "100%",
-    height: "100%"
+    height: "100%",
     // backgroundColor: "pink"
   },
   imageWrapper: {
     padding: 2,
     borderRadius: 4,
-    transition: `transform 600ms`
+    transition: `transform 600ms`,
   },
   imageStyle: {
     width: "100%",
     height: 90,
-    objectFit: "fit"
+    objectFit: "fit",
   },
   small: {
     // borderRadius: 0,
     backgroundColor: "#E1E1E1",
     width: theme.spacing(3),
     height: theme.spacing(3),
-    marginRight: 5
-  }
+    marginRight: 5,
+  },
 }));
 
 const CmdButton = styled(CommandButton)`
@@ -149,7 +129,7 @@ const ActionBtn = styled(ActionButton)`
   background-color: ${({ theme }) => theme.lightGrey};
 `;
 
-const Index = props => {
+const Index = (props) => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [openSlide, setOpenSlide] = React.useState(true);
@@ -169,12 +149,12 @@ const Index = props => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  const onViewHouse = house => {
+  const onViewHouse = (house) => {
     setHouse(house);
     handleSlideOpen();
   };
 
-  const _tileCard = house => {
+  const _tileCard = (house) => {
     const { countryId, provinceId, districtId, images } = house;
     const image = images[0];
     return (
@@ -194,7 +174,7 @@ const Index = props => {
               customStyles={{
                 position: "absolute",
                 top: 3,
-                right: 3
+                right: 3,
               }}
             >
               {house.isActive && (
@@ -258,7 +238,7 @@ const Index = props => {
                   <span>4</span>
                 </Container>
                 <Container row center middle flex={1} color="transparent">
-                  <BathroomIcon style={{ fontSize: 15 }} />
+                  {/* <BathroomIcon style={{ fontSize: 15 }} /> */}
                   <span>4</span>
                 </Container>
                 <Container
@@ -280,7 +260,7 @@ const Index = props => {
       </Link>
     );
   };
-  const _houseCard = house => {
+  const _houseCard = (house) => {
     const { countryId, provinceId, districtId, images } = house;
     const image = images[0];
     return (
@@ -358,7 +338,7 @@ const Index = props => {
       </Container>
     );
   };
-  const _row = house => {
+  const _row = (house) => {
     return (
       <Container
         color="transparent"
@@ -373,7 +353,7 @@ const Index = props => {
           width: "100%",
           borderRadius: 3,
           marginBottom: 5,
-          border: "1px solid #E1E1E1"
+          border: "1px solid #E1E1E1",
         }}
       >
         <Container flex={0.3} row center left color="transparent">
@@ -384,7 +364,7 @@ const Index = props => {
           <SubText>{house.no}</SubText>
         </Container>
         <Container flex={0.2} row center left color="transparent">
-          {house.tenants.map(ten => {
+          {house.tenants.map((ten) => {
             return (
               <Avatar
                 alt="house"
@@ -417,7 +397,7 @@ const Index = props => {
               width: 80,
               height: 25,
 
-              backgroundColor: "light-blue"
+              backgroundColor: "light-blue",
             }}
           />
         </Container>
@@ -434,7 +414,7 @@ const Index = props => {
       column
       customStyles={{
         paddingLeft: 20,
-        height: "100%"
+        height: "100%",
       }}
     >
       <Container
@@ -443,7 +423,7 @@ const Index = props => {
         id={"page-container"}
         customStyles={{
           position: "relative",
-          borderRadius: 5
+          borderRadius: 5,
         }}
       >
         <Container
@@ -453,7 +433,7 @@ const Index = props => {
             paddingTop: 10,
             paddingBottom: 10,
             paddingLeft: 10,
-            paddingRight: 10
+            paddingRight: 10,
           }}
           row
         >
@@ -536,10 +516,10 @@ const Index = props => {
               tenants: [
                 { id: 1, image: "rene" },
                 { id: 2, image: "you" },
-                { id: 3, image: "me" }
+                { id: 3, image: "me" },
               ],
               date: "20-March-2020",
-              status: "Active"
+              status: "Active",
             },
             {
               id: 2,
@@ -548,12 +528,12 @@ const Index = props => {
               tenants: [
                 { id: 1, image: "rene" },
                 { id: 2, image: "you" },
-                { id: 3, image: "me" }
+                { id: 3, image: "me" },
               ],
               date: "20-09-2020",
-              status: "not active"
-            }
-          ].map(house => _row(house))}
+              status: "not active",
+            },
+          ].map((house) => _row(house))}
         </Container>
       </Container>
 

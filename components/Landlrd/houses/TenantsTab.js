@@ -1,18 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import loadingImg from "../../../public/static/126.gif";
+import HouseTenantsQuery from "../../queryComponents/landlord/HouseTenants";
 import {
   Container,
-  SubHeader,
-  SubText,
-  Text,
-  CaptionText,
+  SubHeader
 } from "../../styledComponents";
-import loadingImg from "../../../public/static/126.gif";
-import { Avatar, Divider } from "@material-ui/core";
-import ListIcon from "@material-ui/icons/List";
-import TicketItem from "../TicketItem";
-import SingleTicket from "../tickets/SingleTicket";
-import HouseTenantsQuery from "../../queryComponents/landlord/HouseTenants";
 import TenantCard from "../TenantCard";
 
 const Wrapper = styled(Container)`

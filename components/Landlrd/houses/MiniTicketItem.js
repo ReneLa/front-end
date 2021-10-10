@@ -1,16 +1,11 @@
+import { Avatar } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
 import styled from "styled-components";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import {
-  Container,
-  ActionButton,
-  Text,
-  SubText,
-  NormalText,
-  CaptionText,
-} from "../../styledComponents";
 import userPhoto from "../../../public/static/sandy.jpeg";
-import { Avatar } from "@material-ui/core";
+import {
+  CaptionText, Container, SubText, Text
+} from "../../styledComponents";
 
 const useStyles = makeStyles((theme) => ({
   small: {

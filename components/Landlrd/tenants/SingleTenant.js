@@ -1,20 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import { Avatar, Paper, Tab, Tabs } from "@material-ui/core";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import { Avatar, Tabs, Tab, Paper } from "@material-ui/core";
-import userPhoto from "../../../public/static/sandy.jpeg";
-import MailIcon from "@material-ui/icons/MailOutline";
 import DialIcon from "@material-ui/icons/DialPad";
 import StreetIcon from "@material-ui/icons/LocationOn";
-import {
-  Container,
-  Text,
-  SubHeader,
-  Header,
-  CaptionText,
-  SubText,
-} from "../../styledComponents";
+import MailIcon from "@material-ui/icons/MailOutline";
+import PropTypes from "prop-types";
+import React from "react";
+import styled from "styled-components";
+import { CaptionText, Container, Header, Text } from "../../styledComponents";
 import ProfileTab from "./ProfileTab";
 
 const StyledTabs = withStyles({

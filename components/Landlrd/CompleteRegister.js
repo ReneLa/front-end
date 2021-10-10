@@ -1,27 +1,18 @@
-import React, { useState } from "react";
+import { useMutation } from "@apollo/react-hooks";
+import gql from "graphql-tag";
 import Link from "next/link";
 import Router from "next/router";
-import { useMutation } from "@apollo/react-hooks";
-import {
-  Container,
-  Text,
-  SubHeader,
-  Input,
-  PrimaryButton,
-  SubText,
-  Header,
-  ActionButton,
-  CaptionText,
-} from "../styledComponents";
-import gql from "graphql-tag";
+import React, { useState } from "react";
 import { ApolloConsumer } from "react-apollo";
 import styled from "styled-components";
-import { device } from "../../lib/deviceSize";
 import hasLogo from "../../public/static/HAS.png";
-import { Dropdown } from "../styledComponents";
-import { GET_PROVINCES_IN_COUNTRY } from "../queryComponents/Provinces";
-import { GET_DISTRICTS_IN_PROVINCE } from "../queryComponents/Districts";
 import { GET_COUNTRIES } from "../queryComponents/Countries";
+import { GET_DISTRICTS_IN_PROVINCE } from "../queryComponents/Districts";
+import { GET_PROVINCES_IN_COUNTRY } from "../queryComponents/Provinces";
+import {
+  CaptionText, Container, Dropdown, Header, Input,
+  PrimaryButton, Text
+} from "../styledComponents";
 
 const ImgWrapper = styled(Container)`
   flex-direction: column;

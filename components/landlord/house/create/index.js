@@ -1,75 +1,69 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { withStyles, makeStyles } from "@material-ui/core/styles";
-
-import clsx from "clsx";
 import {
+  AppBar,
+  Step,
   StepButton,
   StepLabel,
   Stepper,
-  Step,
-  IconButton,
-  AppBar
 } from "@material-ui/core";
-
-import Check from "@material-ui/icons/Check";
-import HouseIcon from "@material-ui/icons/House";
+import StepConnector from "@material-ui/core/StepConnector";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import AddPhotoIcon from "@material-ui/icons/AddPhotoAlternate";
-import LeaseIcon from "@material-ui/icons/NoteAdd";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 // import BackIcon from "@material-ui/icons/NoteAdd";
 // import NextIcon from "@material-ui/icons/NoteAdd";
 import ParentHouseIcon from "@material-ui/icons/Apartment";
-import StepConnector from "@material-ui/core/StepConnector";
+import HouseIcon from "@material-ui/icons/House";
+import LeaseIcon from "@material-ui/icons/NoteAdd";
+import clsx from "clsx";
+import PropTypes from "prop-types";
+import React from "react";
 import { Container } from "../../../styledComponents";
-import CreateHouse from "./CreateHouse";
 import AddHouseImage from "./AddHouseImage";
-import LeaseInfo from "./LeaseInfo";
+import CreateHouse from "./CreateHouse";
 import CreateParentHouse from "./CreateParentHouse";
+import LeaseInfo from "./LeaseInfo";
 
-const styles = theme => ({
+const styles = (theme) => ({
   list: {
-    width: 800
+    width: 800,
   },
   root: {
-    width: "100%"
+    width: "100%",
   },
   button: {
     margin: theme.spacing(1),
-    padding: 0
+    padding: 0,
   },
   completed: {
-    display: "inline-block"
+    display: "inline-block",
   },
   instructions: {
     marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(1)
-  }
+    marginBottom: theme.spacing(1),
+  },
 });
 
 const CustomStepConnector = withStyles({
   alternativeLabel: {
-    top: 22
+    top: 22,
   },
   active: {
     "& $line": {
       backgroundImage:
-        "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)"
-    }
+        "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)",
+    },
   },
   completed: {
     "& $line": {
       backgroundImage:
-        "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)"
-    }
+        "linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)",
+    },
   },
   line: {
     height: 3,
     border: 0,
     backgroundColor: "#eaeaf0",
-    borderRadius: 1
-  }
+    borderRadius: 1,
+  },
 })(StepConnector);
 
 const useCustomStepIconStyles = makeStyles({
@@ -82,17 +76,17 @@ const useCustomStepIconStyles = makeStyles({
     display: "flex",
     borderRadius: "50%",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
   active: {
     backgroundImage:
       "linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)",
-    boxShadow: "0 4px 10px 0 rgba(0,0,0,.25)"
+    boxShadow: "0 4px 10px 0 rgba(0,0,0,.25)",
   },
   completed: {
     backgroundImage:
-      "linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)"
-  }
+      "linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)",
+  },
 });
 
 function CustomStepIcon(props) {
@@ -103,14 +97,14 @@ function CustomStepIcon(props) {
     1: <HouseIcon />,
     2: <ParentHouseIcon />,
     3: <LeaseIcon />,
-    4: <AddPhotoIcon />
+    4: <AddPhotoIcon />,
   };
 
   return (
     <div
       className={clsx(classes.root, {
         [classes.active]: active,
-        [classes.completed]: completed
+        [classes.completed]: completed,
       })}
     >
       {icons[String(props.icon)]}
@@ -121,13 +115,13 @@ function CustomStepIcon(props) {
 CustomStepIcon.propTypes = {
   active: PropTypes.bool,
   completed: PropTypes.bool,
-  icon: PropTypes.node
+  icon: PropTypes.node,
 };
 
 class Index extends React.Component {
   state = {
     activeStep: 0,
-    completed: {}
+    completed: {},
   };
 
   totalSteps = () => {
@@ -162,7 +156,7 @@ class Index extends React.Component {
     this.setState({ activeStep: this.state.activeStep - 1 });
   };
 
-  handleStep = step => () => {
+  handleStep = (step) => () => {
     this.setState({ activeStep: step });
   };
 
@@ -180,7 +174,7 @@ class Index extends React.Component {
   getSteps = () => {
     return [" CREATE HOUSE", "BUILDINGS", "LEASE INFORMATION", "PHOTOS"];
   };
-  getStepContent = step => {
+  getStepContent = (step) => {
     switch (step) {
       case 0:
         return <CreateHouse onComplete={this.handleComplete} />;
@@ -239,7 +233,7 @@ class Index extends React.Component {
                     fontWeight: 200,
                     marginLeft: 15,
                     color: "inherit",
-                    cursor: "pointer"
+                    cursor: "pointer",
                   }}
                 >
                   &times;

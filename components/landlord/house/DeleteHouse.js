@@ -1,9 +1,9 @@
+import { IconButton } from "@material-ui/core";
+import DeleteIcon from "@material-ui/icons/Delete";
+import gql from "graphql-tag";
 import React from "react";
 import { Mutation } from "react-apollo";
 import { GET_USER_HOUSES } from "../../queryComponents/Houses";
-import gql from "graphql-tag";
-import { IconButton } from "@material-ui/core";
-import DeleteIcon from "@material-ui/icons/Delete";
 
 const DELETE_HOUSE = gql`
   mutation DELETE_HOUSE($id: ID!) {

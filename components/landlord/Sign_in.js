@@ -1,20 +1,20 @@
-import React from "react";
-import Link from "next/link";
-import { withStyles } from "@material-ui/core/styles";
-import Router from "next/router";
-import hasLogo from "../../public/static/HAS.png";
-import { Mutation } from "react-apollo";
-import gql from "graphql-tag";
-import { CURRENT_USER_QUERY } from "../queryComponents/User";
 import { Divider } from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
+import gql from "graphql-tag";
+import Link from "next/link";
+import Router from "next/router";
+import React from "react";
+import { Mutation } from "react-apollo";
+import loadingImg from "../../public/static/126.gif";
+import hasLogo from "../../public/static/HAS.png";
+import { CURRENT_USER_QUERY } from "../queryComponents/User";
 import {
+  ActionButton,
   Container,
   Input,
   PrimaryButton,
-  ActionButton,
   SubHeader,
 } from "../styledComponents";
-import loadingImg from "../../public/static/126.gif";
 
 const LOGIN_MUTATION = gql`
   mutation LOGIN_MUTATION($email: String!, $password: String!) {

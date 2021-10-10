@@ -1,36 +1,22 @@
-import React from "react";
-import styled from "styled-components";
-import Link from "next/link";
-import { makeStyles } from "@material-ui/core/styles";
+import { useMutation } from "@apollo/react-hooks";
 import {
-  Container,
-  Text,
-  IconButton,
-  SubHeader,
-  SubText,
-  CaptionText,
-  PrimaryButton,
-  NormalText,
-  CommandButton,
-} from "../styledComponents";
-import userPhoto from "../../public/static/sandy.jpeg";
-import {
-  Avatar,
-  Popover,
-  Slide,
-  Dialog,
+  Avatar, Dialog,
   DialogActions,
   DialogContent,
-  DialogTitle,
-  DialogContentText,
+  DialogTitle, Slide
 } from "@material-ui/core";
-import gql from "graphql-tag";
-import { useMutation } from "@apollo/react-hooks";
-import AddIcon from "@material-ui/icons/Add";
-import HouseIcon from "@material-ui/icons/Home";
-import BagIcon from "@material-ui/icons/MonetizationOn";
+import { makeStyles } from "@material-ui/core/styles";
 import CheckIcon from "@material-ui/icons/Check";
+import HouseIcon from "@material-ui/icons/Home";
+import gql from "graphql-tag";
+import Link from "next/link";
+import React from "react";
+import styled from "styled-components";
 import { GET_LANDLORD_TENANTS } from "../queryComponents/landlord/LandlordTenants";
+import {
+  CaptionText, CommandButton, Container, PrimaryButton, SubHeader,
+  SubText
+} from "../styledComponents";
 import { PAGINATION_QUERY } from "./tenants/index";
 
 const useStyles = makeStyles((theme) => ({
