@@ -1,6 +1,6 @@
 import { Avatar, Paper, Tab, Tabs } from "@material-ui/core";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import DialIcon from "@material-ui/icons/DialPad";
+// import DialIcon from "@material-ui/icons/DialPad";
 import NumIcon from "@material-ui/icons/FormatAlignRight";
 import StreetIcon from "@material-ui/icons/LocationOn";
 import PropTypes from "prop-types";
@@ -213,7 +213,7 @@ const SingleHouse = (props) => {
             center
             customStyles={{ paddingTop: 10 }}
           >
-            <DialIcon color="gray" style={{ fontSize: 20, marginRight: 10 }} />
+            {/* <DialIcon color="gray" style={{ fontSize: 20, marginRight: 10 }} /> */}
             <NormalText customStyles={{ fontSize: 11 }}>
               {countryId.name + ", " + provinceId.name}
             </NormalText>
