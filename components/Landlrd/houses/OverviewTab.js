@@ -15,7 +15,7 @@ import PhoneIcon from "@material-ui/icons/LocalPhone";
 import TenantIcon from "@material-ui/icons/PersonPin";
 import BusinessIcon from "@material-ui/icons/Business";
 import ArrowIcon from "@material-ui/icons/ArrowForward";
-import BathroomIcon from "@material-ui/icons/BathTub";
+// import BathroomIcon from "@material-ui/icons/BathTub";
 import BedIcon from "@material-ui/icons/KingBed";
 import GardenIcon from "@material-ui/icons/AmpStories";
 import CarIcon from "@material-ui/icons/DirectionsCar";
@@ -58,7 +58,6 @@ const TenantCard = ({ house, tenant }) => {
 
           return (
             <Container
-             
               flex={0.5}
               row
               customStyles={{
@@ -485,9 +484,9 @@ const Interior = ({ house, appliances, utilities }) => {
           customStyles={{ marginBottom: 7 }}
         >
           <Container row center flex={1} color="transparent">
-            <BathroomIcon
+            {/* <BathroomIcon
               style={{ color: "#979a9a", fontSize: 20, marginRight: 10 }}
-            />
+            /> */}
             <NormalText customStyles={{ fontSize: 12, color: "#979a9a" }}>
               BATHS
             </NormalText>
