@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
+  },
+  "exclude": ["node_modules"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/_document.tsx", "pages/_app.js", "pages/index.js", "pages/landlord/signup.js", "pages/landlord/login.js", "theme/Theme.js", "lib/withData.js", "components/queryComponents/User.js", "components/Page.js", "components/Meta.js", "components/landlord/Sign_in.js", "components/landlord/Register.js", "components/styledComponents/Container.js"]
+}

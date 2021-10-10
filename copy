@@ -1,0 +1,211 @@
+ "dev": "nodemon server.js",
+
+
+
+   <Form>
+            <Container
+              flex={0.6}
+              color="white"
+              column
+              customStyles={{ marginRight: 10, padding: 15, height: "100%" }}
+            >
+              <Container row center color="transparent">
+                <CaptionText
+                  customStyles={{
+                    color: "#323130",
+                    fontWeight: "600",
+                    marginBottom: 10,
+                  }}
+                >
+                  House Details
+                </CaptionText>
+              </Container>
+              <Container color="transparent" row space="space-between">
+                <Container
+                  flex={1}
+                  customStyles={{ paddingRight: 10 }}
+                  color="transparent"
+                >
+                  <Input
+                    label="Title"
+                    placeholder="eg. desired name"
+                    type="text"
+                    // value={house_heading}
+                    // onChange={e => {
+                    //   this.setState({ house_heading: e.target.value });
+                    // }}
+                  />
+                </Container>
+                <Container
+                  color="transparent"
+                  flex={1}
+                  customStyles={{ paddingLeft: 10 }}
+                >
+                  <Input
+                    label="House number"
+                    placeholder="eg. #A457"
+                    type="text"
+                    // value={house_heading}
+                    // onChange={e => {
+                    //   this.setState({ house_heading: e.target.value });
+                    // }}
+                  />
+                </Container>
+              </Container>
+              <Container
+                color="transparent"
+                column
+                flex={false}
+                customStyles={{ width: "100%" }}
+              >
+                <CaptionText
+                  customStyles={{ marginBottom: 5, color: "#323130" }}
+                >
+                  Description
+                </CaptionText>
+                <textarea
+                  type="text"
+                  placeholder="start typing here..."
+                  className={classes.inputStyle}
+                  // value={house_description}
+                  // onChange={e => {
+                  //   this.setState({
+                  //     house_description: e.target.value
+                  //   });
+                  // }}
+                />
+              </Container>
+              <Container row center color="transparent">
+                <CaptionText
+                  customStyles={{
+                    color: "#323130",
+                    fontWeight: "600",
+                    marginTop: 20,
+                    marginBottom: 10,
+                  }}
+                >
+                  Facts and Features
+                </CaptionText>
+              </Container>
+              <Container row space="space-between" color="transparent">
+                <Container flex={0.3} column color="transparent">
+                  <CaptionText
+                    customStyles={{ marginBottom: 5, color: "#323130" }}
+                  >
+                    House type
+                  </CaptionText>
+                  <HouseTypesList
+                    house_type={house_type}
+                    setHouseType={setHouseType}
+                  />
+                </Container>
+                <Input
+                  label="year built"
+                  type="date"
+                  placeholder="eg.2011"
+                  style={{ width: 150 }}
+                  // value={house_heading}
+                  // onChange={e => {
+                  //   this.setState({ house_heading: e.target.value });
+                  // }}
+                />
+                <Input
+                  label="Parking"
+                  placeholder="eg. 3 cars"
+                  type="number"
+                  style={{ width: 100 }}
+                  // value={house_heading}
+                  // onChange={e => {
+                  //   this.setState({ house_heading: e.target.value });
+                  // }}
+                />
+              </Container>
+              <Container row center color="transparent">
+                <CaptionText
+                  customStyles={{
+                    color: "#323130",
+                    fontWeight: "600",
+                    marginBottom: 10,
+                  }}
+                >
+                  Interior details
+                </CaptionText>
+              </Container>
+              <Container row color="transparent">
+                <Container
+                  color="transparent"
+                  customStyles={{ marginRight: 15 }}
+                >
+                  <TextInput
+                    label="no. bedrooms"
+                    placeholder="0"
+                    type="number"
+                    customStyles={{ textAlign: "center", width: 50 }}
+                    row
+                    // value={house_heading}
+                    // onChange={e => {
+                    //   this.setState({ house_heading: e.target.value });
+                    // }}
+                  />
+                </Container>
+                <Container
+                  color="transparent"
+                  customStyles={{ marginRight: 15 }}
+                >
+                  <TextInput
+                    label="no. bathrooms"
+                    type="number"
+                    placeholder="0"
+                    row
+                    customStyles={{ textAlign: "center", width: 50 }}
+                    // value={house_heading}
+                    // onChange={e => {
+                    //   this.setState({ house_heading: e.target.value });
+                    // }}
+                  />
+                </Container>
+                <Container color="transparent">
+                  <TextInput
+                    label="Flooring"
+                    placeholder="eg. wooden floor"
+                    type="text"
+                    row
+                    customStyles={{ width: 140 }}
+                    // value={house_heading}
+                    // onChange={e => {
+                    //   this.setState({ house_heading: e.target.value });
+                    // }}
+                  />
+                </Container>
+              </Container>
+              <Container column color="transparent">
+                <CaptionText
+                  customStyles={{ marginBottom: 5, color: "#323130" }}
+                >
+                  Appliances
+                </CaptionText>
+                <ApplianceList
+                  list={applianceList}
+                  setList={setApplianceList}
+                />
+              </Container>
+              <Container column color="transparent">
+                <CaptionText
+                  customStyles={{ marginBottom: 5, color: "#323130" }}
+                >
+                  Utilities
+                </CaptionText>
+                <UtilitiesList
+                  utilities={utilities}
+                  setUtilities={setUtilities}
+                />
+              </Container>
+            </Container>
+
+            <Container
+              flex={0.4}
+              color="white"
+              column
+              customStyles={{ marginLeft: 10 }}
+            ></Container>
+          </Form>
