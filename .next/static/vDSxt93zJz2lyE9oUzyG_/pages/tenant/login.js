@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[42],{wh8g:function(n,w,o){(window.__NEXT_P=window.__NEXT_P||[]).push(["/tenant/login",function(){return o("zRZY")}])},zRZY:function(n,w){}},[["wh8g",0]]]);

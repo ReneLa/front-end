@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[21],{gOvC:function(n,o,w){(window.__NEXT_P=window.__NEXT_P||[]).push(["/Landlrd/house",function(){return w("shy9")}])},shy9:function(n,o){}},[["gOvC",0]]]);

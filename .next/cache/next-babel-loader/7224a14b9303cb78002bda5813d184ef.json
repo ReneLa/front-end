@@ -1,0 +1,1 @@
+{"ast":null,"code":"var __jsx = React.createElement;\nimport React from \"react\";\nimport CompleteRegister from \"../../components/Landlrd/CompleteRegister\";\n\nconst LandlordCompleteRegister = () => {\n  return __jsx(CompleteRegister, null);\n};\n\nexport default LandlordCompleteRegister;","map":null,"metadata":{},"sourceType":"module"}

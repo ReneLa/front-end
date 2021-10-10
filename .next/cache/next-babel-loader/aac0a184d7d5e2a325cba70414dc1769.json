@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const endpoint = `http://localhost:4444`;\nexport const perPage = 8;","map":null,"metadata":{},"sourceType":"module"}
